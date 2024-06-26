@@ -24,6 +24,8 @@ module.exports = {
         "linkedinBg": "#1D98D3",
         "instagramBg": "#D70867",
         "whatsappBg": "#00A834",
+        "navBg" : "#002060",
+        "bgYellow" : "#ffc107"
       }
     },
   },
