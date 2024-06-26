@@ -17,6 +17,7 @@ module.exports = {
       textColor : {
         "textNavColor" : "#999",
         "headingColor": "#eee",
+        "textHeadingColor" : "#232323"
       },
       backgroundColor: {
         "facebookBg": "#4B69A8",
@@ -25,7 +26,8 @@ module.exports = {
         "instagramBg": "#D70867",
         "whatsappBg": "#00A834",
         "navBg" : "#002060",
-        "bgYellow" : "#ffc107"
+        "bgYellow" : "#ffc107",
+        "footerBg" : "#1C1C1C"
       }
     },
   },

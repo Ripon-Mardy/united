@@ -44,7 +44,7 @@ const Navbar = () => {
 
   return (
    <>
-    <div className="container mx-auto w-full py-3">
+    <div className="container mx-auto w-full py-3 px-3 md:px-0">
     <div className="flex items-center justify-between">
      <div className="flex justify-between items-center w-full">
        {/* ====logo === */}
@@ -131,7 +131,7 @@ const Navbar = () => {
 
 
 
-    <div className=' bg-navBg text-white'>
+    <div className=' bg-navBg text-white top-0 z-10'>
 
       <div className='container mx-auto xl:flex items-center justify-between hidden'>
         <Link href={'#'} className='font-medium flex items-center gap-1 py-5'>Home</Link>
@@ -161,7 +161,7 @@ const Navbar = () => {
      <AnimatePresence>
      {
       isNavOpen && (
-        <motion.div initial = {{x : "-100%"}} animate= {{x:0}} transition={{duration : 0.5}} exit={{x : '-100%'}} className='absolute left-0 top-0 h-screen w-2/3 shadow-2xl z-10 xl:hidden'>
+        <motion.div initial = {{x : "-100%"}} animate= {{x:0}} transition={{duration : 0.5}} exit={{x : '-100%'}} className='absolute left-0 top-0 h-screen w-2/3 shadow-2xl z-10 xl:hidden bg-white'>
 
         <div className=''>
           <div className='bg-white p-4'>
