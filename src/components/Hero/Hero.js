@@ -50,11 +50,11 @@ const Hero = () => {
           </div>
         </SwiperSlide>
 
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <div className='md:h-[500px] h-[400]'>
             <Image src={banner3} width={400} height={400} layout='responsive' className='rounded-md'></Image>
           </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
 
         <SwiperSlide>
           <div className='md:h-[500px] h-[400]'>
