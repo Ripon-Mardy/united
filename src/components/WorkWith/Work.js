@@ -42,6 +42,8 @@ import partner24 from './../../../public/Image/partnar/24.png'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import './style.css'
+
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
