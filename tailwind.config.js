@@ -27,7 +27,12 @@ module.exports = {
         "whatsappBg": "#00A834",
         "navBg" : "#002060",
         "bgYellow" : "#ffc107",
-        "footerBg" : "#1C1C1C"
+        "footerBg" : "#1C1C1C",
+        "sectionBg" : "#F7F9FB",
+        "productBg" : "#EAEBF2"
+      },
+      borderColor : {
+        "hoverborder" : "#002060"
       }
     },
   },
