@@ -40,31 +40,31 @@ const Hero = () => {
       >
         <SwiperSlide>
           <div   className='md:h-[500px] h-[400]'>
-            <Image src={banner1} width={400} height={400} className=' object-cover w-full'></Image>
+            <Image src={banner1} width={400} height={400} layout='responsive' className=' object-cover w-full'></Image>
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
           <div className='md:h-[500px] h-[400]'>
-            <Image src={banner2} width={400} height={400} className='rounded-md object-cover'></Image>
+            <Image src={banner2} width={400} height={400} layout='responsive' className='rounded-md object-cover'></Image>
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
           <div className='md:h-[500px] h-[400]'>
-            <Image src={banner3} width={400} height={400} className='rounded-md'></Image>
+            <Image src={banner3} width={400} height={400} layout='responsive' className='rounded-md'></Image>
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
           <div className='md:h-[500px] h-[400]'>
-            <Image src={banner4} width={400} height={400} className='rounded-md object-cover'></Image>
+            <Image src={banner4} width={400} height={400} layout='responsive' className='rounded-md object-cover'></Image>
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
           <div className='md:h-[500px] h-[400]'>
-            <Image src={banner5} width={400} height={400} className='rounded-md'></Image>
+            <Image src={banner5} width={400} height={400} layout='responsive' className='rounded-md'></Image>
           </div>
         </SwiperSlide>
 
