@@ -248,9 +248,13 @@ const Navbar = () => {
                           {
                             isOpen && (
                               <motion.div initial='initial' animate='animate' variants={variants} transition={{ duration: 0.5 }} className='flex flex-col gap-4 mt-1 border-t-2 w-full pt-2 border-gray-500'>
-                                <Link href={'#'}>About Us</Link>
-                                <Link href={'#'}>About Us</Link>
-                                <Link href={'#'}>About Us</Link>
+                                <Link href={'#'}>Forklift</Link>
+                                <Link href={'#'}>Warehouse Equipment</Link>
+                                <Link href={'#'}>Material Handling Equipment</Link>
+                                <Link href={'#'}>Lifts & Cranes</Link>
+                                <Link href={'#'}>Construction Equipment</Link>
+                                <Link href={'#'}>Lithium Powered Equipment</Link>
+                                <Link href={'#'}>Others</Link>
                               </motion.div>
                             )
                           }
@@ -268,9 +272,13 @@ const Navbar = () => {
                           {
                             isOpen && (
                               <motion.div initial='initial' animate='animate' variants={variants} transition={{ duration: 0.5 }} className='flex flex-col gap-4 mt-1 border-t-2 w-full pt-2 border-gray-500'>
-                                <Link href={'#'}>About Us</Link>
-                                <Link href={'#'}>About Us</Link>
-                                <Link href={'#'}>About Us</Link>
+                                 <Link href={'#'}>Forklift</Link>
+                                <Link href={'#'}>Warehouse Equipment</Link>
+                                <Link href={'#'}>Material Handling Equipment</Link>
+                                <Link href={'#'}>Lifts & Cranes</Link>
+                                <Link href={'#'}>Construction Equipment</Link>
+                                <Link href={'#'}>Lithium Powered Equipment</Link>
+                                <Link href={'#'}>Others</Link>
                               </motion.div>
                             )
                           }
@@ -288,9 +296,13 @@ const Navbar = () => {
                           {
                             isOpen && (
                               <motion.div initial='initial' animate='animate' variants={variants} transition={{ duration: 0.5 }} className='flex flex-col gap-4 mt-1 border-t-2 w-full pt-2 border-gray-500'>
-                                <Link href={'#'}>About Us</Link>
-                                <Link href={'#'}>About Us</Link>
-                                <Link href={'#'}>About Us</Link>
+                                <Link href={'#'}>Forklift</Link>
+                                <Link href={'#'}>Warehouse Equipment</Link>
+                                <Link href={'#'}>Material Handling Equipment</Link>
+                                <Link href={'#'}>Lifts & Cranes</Link>
+                                <Link href={'#'}>Construction Equipment</Link>
+                                <Link href={'#'}>Lithium Powered Equipment</Link>
+                                <Link href={'#'}>Others</Link>
                               </motion.div>
                             )
                           }
@@ -308,9 +320,13 @@ const Navbar = () => {
                           {
                             isOpen && (
                               <motion.div initial='initial' animate='animate' variants={variants} transition={{ duration: 0.5 }} className='flex flex-col gap-4 mt-1 border-t-2 w-full pt-2 border-gray-500'>
-                                <Link href={'#'}>About Us</Link>
-                                <Link href={'#'}>About Us</Link>
-                                <Link href={'#'}>About Us</Link>
+                                 <Link href={'#'}>Forklift</Link>
+                                <Link href={'#'}>Warehouse Equipment</Link>
+                                <Link href={'#'}>Material Handling Equipment</Link>
+                                <Link href={'#'}>Lifts & Cranes</Link>
+                                <Link href={'#'}>Construction Equipment</Link>
+                                <Link href={'#'}>Lithium Powered Equipment</Link>
+                                <Link href={'#'}>Others</Link>
                               </motion.div>
                             )
                           }
@@ -328,9 +344,13 @@ const Navbar = () => {
                           {
                             isOpen && (
                               <motion.div initial='initial' animate='animate' variants={variants} transition={{ duration: 0.5 }} className='flex flex-col gap-4 mt-1 border-t-2 w-full pt-2 border-gray-500'>
-                                <Link href={'#'}>About Us</Link>
-                                <Link href={'#'}>About Us</Link>
-                                <Link href={'#'}>About Us</Link>
+                                <Link href={'#'}>Forklift</Link>
+                                <Link href={'#'}>Warehouse Equipment</Link>
+                                <Link href={'#'}>Material Handling Equipment</Link>
+                                <Link href={'#'}>Lifts & Cranes</Link>
+                                <Link href={'#'}>Construction Equipment</Link>
+                                <Link href={'#'}>Lithium Powered Equipment</Link>
+                                <Link href={'#'}>Others</Link>
                               </motion.div>
                             )
                           }
@@ -348,9 +368,13 @@ const Navbar = () => {
                           {
                             isOpen && (
                               <motion.div initial='initial' animate='animate' variants={variants} transition={{ duration: 0.5 }} className='flex flex-col gap-4 mt-1 border-t-2 w-full pt-2 border-gray-500'>
-                                <Link href={'#'}>About Us</Link>
-                                <Link href={'#'}>About Us</Link>
-                                <Link href={'#'}>About Us</Link>
+                                 <Link href={'#'}>Forklift</Link>
+                                <Link href={'#'}>Warehouse Equipment</Link>
+                                <Link href={'#'}>Material Handling Equipment</Link>
+                                <Link href={'#'}>Lifts & Cranes</Link>
+                                <Link href={'#'}>Construction Equipment</Link>
+                                <Link href={'#'}>Lithium Powered Equipment</Link>
+                                <Link href={'#'}>Others</Link>
                               </motion.div>
                             )
                           }
@@ -398,7 +422,7 @@ const Navbar = () => {
                       </Link>
                     </div>
                     <div className='mt-2'>
-                      <p className='text-black text-center text-textNavColor'>© 2021 United Machinery Bangladesh.</p>
+                      <p className=' text-center text-textNavColor'>© 2021 United Machinery Bangladesh.</p>
                     </div>
                   </div>
                 </div>
