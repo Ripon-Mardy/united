@@ -24,7 +24,7 @@ const Products = () => {
        </div>
 
        <div className='md:grid md:grid-cols-4 grid-cols-1 grid gap-10 mt-10'>
-        <Link href={'#'} className='bg-white p-2 py-4 rounded-md text-center hover:shadow-md duration-200 ease-in-out w-full border-b-2 hover:border-hoverborder inline-block'>
+        <Link href={'/product-category'} className='bg-white p-2 py-4 rounded-md text-center hover:shadow-md duration-200 ease-in-out w-full border-b-2 hover:border-hoverborder inline-block'>
             <Image src={product1} width={330} height={330} className='mx-auto'></Image>
             <h1 className='text-2xl font-semibold mt-2'>Traction Batteries</h1>
         </Link>

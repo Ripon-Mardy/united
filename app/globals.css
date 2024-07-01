@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    overflow-x: hidden;
+}
+
+.productImageCover
+{
+    background-image: url('./../public/Image/product-category/New-Pic.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit:  cover;
+    position: relative;
+    z-index: 1;
+}
+
+.productImageCover::before
+{
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.486);
+    z-index: -1;
+}
 
 .imgRation {
     @apply aspect-[3/2] w-[15%];
