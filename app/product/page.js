@@ -1,20 +1,18 @@
 'use client'
 import React, { useState } from 'react'
 import Link from 'next/link'
-import Product from '@/src/components/product/Product'
 
 
 // === icons ===
 import { TiWorld } from "react-icons/ti";
 import { FaNoteSticky } from "react-icons/fa6";
-
-// === components === 
-import ProductExplore from '@/src/components/ProductExplore/ProductExplore';
-import GetAQuoteForm from '@/src/components/GetAQuoteForm';
+import ProductExplore from '@/components/product_explore/ProductExplore';
+import Product from '@/components/product/Product';
+import GetAQuoteForm from '@/components/Get_a_quote_form';
 
 const page = () => {
 
-        const text= "These 4-wheel electric forklifts is ready to face some of the most difficult material handling tasks. Max-8 series is your multipurpose workhorse that supplies great power, easy operation and leading performance to be the best solution for whatever you are lifting."
+    const text = "These 4-wheel electric forklifts is ready to face some of the most difficult material handling tasks. Max-8 series is your multipurpose workhorse that supplies great power, easy operation and leading performance to be the best solution for whatever you are lifting."
 
     const [content, setContent] = useState(text);
 
@@ -52,7 +50,7 @@ const page = () => {
                 <div className='md:flex md:gap-10'>
                     <div className=' w-4/5 mx-auto md:w-[35%]'>
 
-                        <Product />
+                        <Product/>
 
                     </div>
 
@@ -67,24 +65,17 @@ const page = () => {
                 <div>
                     <div className='flex gap-4 mt-5'>
                         <button onClick={() => handleProductButton("Details")} className="relative px-3 py-2 rounded-md bg-white isolation-auto z-10 border border-gray-500
-        before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-navBg hover:text-white hover:duration-1000 before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 capitalize font-semibold flex items-center justify-center gap-2"> <TiWorld/>  Product Details  </button>
+        before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-navBg hover:text-white hover:duration-1000 before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 capitalize font-semibold flex items-center justify-center gap-2"> <TiWorld />  Product Details  </button>
 
-                        <button  onClick={() => handleQuoteButton('quote')} className="relative px-3 py-2 rounded-md bg-white isolation-auto z-10 border border-gray-500
-        before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-navBg hover:text-white hover:duration-1000 before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 capitalize font-semibold flex items-center justify-between gap-2"> <FaNoteSticky/> Get A Quote</button>
+                        <button onClick={() => handleQuoteButton('quote')} className="relative px-3 py-2 rounded-md bg-white isolation-auto z-10 border border-gray-500
+        before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-navBg hover:text-white hover:duration-1000 before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 capitalize font-semibold flex items-center justify-between gap-2"> <FaNoteSticky /> Get A Quote</button>
                     </div>
 
 
                     <div>
-                       <p className='mt-4 md:text-lg'>{content}</p> 
-                    </div>
-                    {/* ===== quote ===  */}
-                    {/* <div>
-                        <GetAQuoteForm/>
+                        <p className='mt-4 md:text-lg'>{content}</p>
                     </div>
 
-                    <div>
-                        <p ></p>
-                    </div> */}
 
                 </div>
 
@@ -98,7 +89,7 @@ const page = () => {
                 <h1 className='text-2xl font-semibold'>Explore More Product</h1>
 
                 <div className='mt-3 opacity-100'>
-                    <ProductExplore/>
+                   <ProductExplore/>
 
                 </div>
 

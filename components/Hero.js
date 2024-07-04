@@ -4,15 +4,15 @@ import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 
 // === images ===
-import banner1 from './../../../public/Image/Hero Banner/b1.jpg'
-import banner2 from './../../../public/Image/Hero Banner/b2.jpg'
-import banner3 from './../../../public/Image/Hero Banner/b3.jpg'
-import banner4 from './../../../public/Image/Hero Banner/b4.png'
-import banner5 from './../../../public/Image/Hero Banner/b5.jpg'
+import banner1 from './../public/Image/Hero Banner/b1.jpg'
+import banner2 from './../public/Image/Hero Banner/b2.jpg'
+import banner3 from './../public/Image/Hero Banner/b3.jpg'
+import banner4 from './../public/Image/Hero Banner/b4.png'
+import banner5 from './../public/Image/Hero Banner/b5.jpg'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import './style.css'
+// import './style.css'
 
 // Import Swiper styles
 import 'swiper/css';

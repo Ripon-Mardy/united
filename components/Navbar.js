@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // === imaage === 
-import unitedLogo from './../../public/Image/United.png'
+import unitedLogo from './../public/Image/United.png'
 
 // === icons ===
 import { FaAngleDown } from "react-icons/fa6";
@@ -133,7 +133,7 @@ const Navbar = () => {
 
       <div className=' bg-navBg text-white top-0 z-10'>
 
-        <div className='container mx-auto xl:flex items-center justify-between hidden'>
+        <div className='container mx-auto xl:flex items-center gap-16 hidden'>
           <Link href={'#'} className='font-medium flex items-center gap-1 py-5'>Home</Link>
           <Link href={'#'} className='font-medium flex items-center gap-1 relative group h-full py-5 duration-200 ease-in-out'>Products <FaAngleDown />
 

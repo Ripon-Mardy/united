@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 // ==== images === 
-import aboutus from './../../public/Image/about-us.jpg'
+import aboutus from './../public/Image/about-us.jpg'
 
 const Aboutus = () => {
     return (

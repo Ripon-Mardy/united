@@ -1,9 +1,9 @@
-import Aboutus from "@/src/components/Aboutus";
-import Hero from "@/src/components/Hero/Hero";
-import Products from "@/src/components/Products";
-import Services from "@/src/components/Services";
-import Testimonials from "@/src/components/Testimonials";
-import Work from "@/src/components/WorkWith/Work";
+import Aboutus from "@/components/Aboutus";
+import Hero from "@/components/Hero";
+import Products from "@/components/Products";
+import Services from "@/components/Services";
+import Testimonials from "@/components/Testimonials";
+import Work from "@/components/work_with/Work";
 
 export default function Home() {
   return (

@@ -11,10 +11,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
 
-import './style.css'
+// import './style.css'
 
 // === images ==== 
-import product1 from './../../../public/Image/Product review/product1.png'
+import product1 from './../../public/Image/Product review/product1.png'
 
 // import required modules
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';

@@ -3,14 +3,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 // == images === 
-import product1 from './../../public/Image/products/p1.png'
-import product2 from './../../public/Image/products/p2.jpg'
-import product3 from './../../public/Image/products/p3.jpg'
-import product4 from './../../public/Image/products/p4.png'
-import product5 from './../../public/Image/products/p5.jpg'
-import product6 from './../../public/Image/products/p6.png'
-import product7 from './../../public/Image/products/p7.png'
-import product8 from './../../public/Image/products/p8.jpeg'
+import product1 from './../public/Image/products/p1.png'
+import product2 from './../public/Image/products/p2.jpg'
+import product3 from './../public/Image/products/p3.jpg'
+import product4 from './../public/Image/products/p4.png'
+import product5 from './../public/Image/products/p5.jpg'
+import product6 from './../public/Image/products/p6.png'
+import product7 from './../public/Image/products/p7.png'
+import product8 from './../public/Image/products/p8.jpeg'
 
 const Products = () => {
   return (

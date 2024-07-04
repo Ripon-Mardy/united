@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
 import './style.css'
 
 // === image === 
-import ep1 from './../../../public/Image/Product review/Explore Product/ep1.png'
+import ep1 from './../../public/Image/Product review/Explore Product/ep1.png'
 
 
 // import required modules

@@ -15,11 +15,11 @@ import {
 } from "react-icons/fa";
 
 // === images === 
-import footer1 from './../../public/Image/Footer Gallary/footer1.png'
-import footer2 from './../../public/Image/Footer Gallary/footer2.jpg'
-import footer3 from './../../public/Image/Footer Gallary/footer3.png'
-import footer4 from './../../public/Image/Footer Gallary/footer4.jpg'
-import footer5 from './../../public/Image/Footer Gallary/footer5.jpeg'
+import footer1 from './../public/Image/Footer Gallary/footer1.png'
+import footer2 from './../public/Image/Footer Gallary/footer2.jpg'
+import footer3 from './../public/Image/Footer Gallary/footer3.png'
+import footer4 from './../public/Image/Footer Gallary/footer4.jpg'
+import footer5 from './../public/Image/Footer Gallary/footer5.jpeg'
 
 const Footer = () => {
     return (

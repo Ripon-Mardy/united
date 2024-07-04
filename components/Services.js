@@ -3,11 +3,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 // == images === 
-import service1 from './../../public/Image/services/s1.jpg'
-import service2 from './../../public/Image/services/s2.jpg'
-import service3 from './../../public/Image/services/s3.png'
-import service4 from './../../public/Image/services/s4.png'
-import service5 from './../../public/Image/services/s5.png'
+import service1 from './../public/Image/services/s1.jpg'
+import service2 from './../public/Image/services/s2.jpg'
+import service3 from './../public/Image/services/s3.png'
+import service4 from './../public/Image/services/s4.png'
+import service5 from './../public/Image/services/s5.png'
 
 const Services = () => {
   return (
