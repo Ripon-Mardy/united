@@ -23,6 +23,7 @@ const page = () => {
 
     const [content, setContent] = useState(text);
     const [isCategory, setIsCategory] =  useState(false);
+    const [dropdown, setDropdown] = useState(null)
 
 
 
@@ -38,8 +39,9 @@ const page = () => {
         setContent(<GetAQuoteForm />)
     }
 
-    const handleProductCategory = () => {
+    const handleProductCategory = (tabname) => {
         setIsCategory(!isCategory)
+        setDropdown(tabname)
     }
 
     return (
@@ -66,47 +68,235 @@ const page = () => {
                     <div className='md:flex md:gap-10'>
                         <div className='md:w-1/4 md:flex flex-col gap-6 hidden'>
                             <div className='md:flex flex-col relative justify-between border-b border-gray-300 pb-2 cursor-pointer font-medium'>
-                               <div onClick={handleProductCategory} className='flex items-center justify-between'>
+                               <div onClick={() => handleProductCategory(1)} className='flex items-center justify-between'>
                                <h1>Rental Equipment</h1>
                                <FaAngleDown />
                                </div>
 
                               <div>
                               {
-                                isCategory && (
-                                    <div className='flex flex-col bg-gray-200 rounded-md gap-3 p-1 mt-2'>
-                                    <Link href={'#'} className='hover:bg-gray-300 p-1'>Forklift</Link>
-                                    <Link href={'#'} className='hover:bg-gray-300 p-1'>excavator</Link>
-                                    <Link href={'#'} className='hover:bg-gray-300 p-1'>Wheel loader</Link>
-                                    <Link href={'#'} className='hover:bg-gray-300 p-1'>payloader</Link>
-                                    <Link href={'#'} className='hover:bg-gray-300 p-1'>Road Roller</Link>
-                                </div>
+                                dropdown == 1 && (
+                                    isCategory && (
+                                        <div className='flex flex-col bg-gray-200 rounded-md gap-3 p-1 mt-2'>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Forklift</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>excavator</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Wheel loader</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>payloader</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Road Roller</Link>
+                                    </div>
+                                    )
                                 )
+                               
                               }
                               </div>
                             </div>
 
+
+                            <div className='md:flex flex-col relative justify-between border-b border-gray-300 pb-2 cursor-pointer font-medium'>
+                               <div onClick={() => handleProductCategory(2)} className='flex items-center justify-between'>
+                               <h1>Engine Parts</h1>
+                               <FaAngleDown />
+                               </div>
+
+                              <div>
+                              {
+                                dropdown == 2 && (
+                                    isCategory && (
+                                        <div className='flex flex-col bg-gray-200 rounded-md gap-3 p-1 mt-2'>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Forklift</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>excavator</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Wheel loader</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>payloader</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Road Roller</Link>
+                                    </div>
+                                    )
+                                )
+                               
+                              }
+                              </div>
+                            </div>
+
+
+
+                            <div className='md:flex flex-col relative justify-between border-b border-gray-300 pb-2 cursor-pointer font-medium'>
+                               <div onClick={() => handleProductCategory(3)} className='flex items-center justify-between'>
+                               <h1>Filters</h1>
+                               <FaAngleDown />
+                               </div>
+
+                              <div>
+                              {
+                                dropdown == 3 && (
+                                    isCategory && (
+                                        <div className='flex flex-col bg-gray-200 rounded-md gap-3 p-1 mt-2'>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Forklift</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>excavator</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Wheel loader</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>payloader</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Road Roller</Link>
+                                    </div>
+                                    )
+                                )
+                               
+                              }
+                              </div>
+                            </div>
+
+
+
+                            <div className='md:flex flex-col relative justify-between border-b border-gray-300 pb-2 cursor-pointer font-medium'>
+                               <div onClick={() => handleProductCategory(4)} className='flex items-center justify-between'>
+                               <h1>Hydraulic parts</h1>
+                               <FaAngleDown />
+                               </div>
+
+                              <div>
+                              {
+                                dropdown == 4 && (
+                                    isCategory && (
+                                        <div className='flex flex-col bg-gray-200 rounded-md gap-3 p-1 mt-2'>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Forklift</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>excavator</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Wheel loader</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>payloader</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Road Roller</Link>
+                                    </div>
+                                    )
+                                )
+                               
+                              }
+                              </div>
+                            </div>
+
+
+
+                            <div className='md:flex flex-col relative justify-between border-b border-gray-300 pb-2 cursor-pointer font-medium'>
+                               <div onClick={() => handleProductCategory(5)} className='flex items-center justify-between'>
+                               <h1>Transmission Parts</h1>
+                               <FaAngleDown />
+                               </div>
+
+                              <div>
+                              {
+                                dropdown == 5 && (
+                                    isCategory && (
+                                        <div className='flex flex-col bg-gray-200 rounded-md gap-3 p-1 mt-2'>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Forklift</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>excavator</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Wheel loader</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>payloader</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Road Roller</Link>
+                                    </div>
+                                    )
+                                )
+                               
+                              }
+                              </div>
+                            </div>
+
+
+                            <div className='md:flex flex-col relative justify-between border-b border-gray-300 pb-2 cursor-pointer font-medium'>
+                               <div onClick={() => handleProductCategory(6)} className='flex items-center justify-between'>
+                               <h1>Brakes parts</h1>
+                               <FaAngleDown />
+                               </div>
+
+                              <div>
+                              {
+                                dropdown == 6 && (
+                                    isCategory && (
+                                        <div className='flex flex-col bg-gray-200 rounded-md gap-3 p-1 mt-2'>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Forklift</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>excavator</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Wheel loader</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>payloader</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Road Roller</Link>
+                                    </div>
+                                    )
+                                )
+                               
+                              }
+                              </div>
+                            </div>
+
+
+                            <div className='md:flex flex-col relative justify-between border-b border-gray-300 pb-2 cursor-pointer font-medium'>
+                               <div onClick={() => handleProductCategory(6)} className='flex items-center justify-between'>
+                               <h1>Electric Parts</h1>
+                               <FaAngleDown />
+                               </div>
+
+                              <div>
+                              {
+                                dropdown == 6 && (
+                                    isCategory && (
+                                        <div className='flex flex-col bg-gray-200 rounded-md gap-3 p-1 mt-2'>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Forklift</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>excavator</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Wheel loader</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>payloader</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Road Roller</Link>
+                                    </div>
+                                    )
+                                )
+                               
+                              }
+                              </div>
+                            </div>
+
+
+                            <div className='md:flex flex-col relative justify-between border-b border-gray-300 pb-2 cursor-pointer font-medium'>
+                               <div onClick={() => handleProductCategory(7)} className='flex items-center justify-between'>
+                               <h1>Seal kits</h1>
+                               <FaAngleDown />
+                               </div>
+
+                              <div>
+                              {
+                                dropdown == 7 && (
+                                    isCategory && (
+                                        <div className='flex flex-col bg-gray-200 rounded-md gap-3 p-1 mt-2'>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Forklift</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>excavator</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Wheel loader</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>payloader</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Road Roller</Link>
+                                    </div>
+                                    )
+                                )
+                               
+                              }
+                              </div>
+                            </div>
+
+
+                            <div className='md:flex flex-col relative justify-between border-b border-gray-300 pb-2 cursor-pointer font-medium'>
+                               <div onClick={() => handleProductCategory(8)} className='flex items-center justify-between'>
+                               <h1>Drive Parts</h1>
+                               <FaAngleDown />
+                               </div>
+
+                              <div>
+                              {
+                                dropdown == 8 && (
+                                    isCategory && (
+                                        <div className='flex flex-col bg-gray-200 rounded-md gap-3 p-1 mt-2'>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Forklift</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>excavator</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Wheel loader</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>payloader</Link>
+                                        <Link href={'#'} className='hover:bg-gray-300 p-1'>Road Roller</Link>
+                                    </div>
+                                    )
+                                )
+                               
+                              }
+                              </div>
+                            </div>
+
+
+
                            
-
-                            <div className='flex items-center justify-between border-b border-gray-300 pb-2 cursor-pointer font-medium'>
-                                <h1>Filters</h1>
-                                <FaAngleDown />
-                            </div>
-
-                            <div className='flex items-center justify-between border-b border-gray-300 pb-2 cursor-pointer font-medium'>
-                                <h1>Hydraulic parts</h1>
-                                <FaAngleDown />
-                            </div>
-
-                            <div className='flex items-center justify-between border-b border-gray-300 pb-2 cursor-pointer font-medium'>
-                                <h1>Transmission Parts</h1>
-                                <FaAngleDown />
-                            </div>
-
-                            <div className='flex items-center justify-between border-b border-gray-300 pb-2 cursor-pointer font-medium'>
-                                <h1>Brakes parts</h1>
-                                <FaAngleDown />
-                            </div>
 
 
                         </div>
