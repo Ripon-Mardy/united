@@ -216,7 +216,7 @@ const Navbar = () => {
 
           <Link href={'#'} className='font-medium flex items-center gap-1 relative group h-full py-5 duration-200 ease-in-out text-lg'>Rental <FaAngleDown />
 
-            <ul className='absolute left-0 top-16  bg-white text-black w-72 flex flex-col gap-2 rounded-b-md invisible  group-hover:visible z-10 overflow-hidden'>
+            <ul className='absolute -left-36 top-16  bg-white text-black w-72 flex flex-col gap-2 rounded-b-md invisible  group-hover:visible z-10 overflow-hidden'>
               <li className='hover:bg-gray-300 p-2 px-3'>Forklift</li>
               <li className='hover:bg-gray-300 p-2 px-3'>Warehouse Equipment</li>
               <li className='hover:bg-gray-300 p-2 px-3'>Material Handling Equipment</li>

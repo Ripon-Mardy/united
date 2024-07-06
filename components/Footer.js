@@ -25,20 +25,27 @@ import footer5 from './../public/Image/Footer Gallary/footer5.jpeg'
 const Footer = () => {
 
     const [isFullscreen, setIsFullscreen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState(null);
+    const [selectedIndex, setSelectedIndex] = useState(null);
 
-    const images = [ footer1, footer2, footer3, footer4, footer5];
+    const images = [footer1, footer2, footer3, footer4, footer5];
 
-
-    const openFullscreen = (image) => {
-        setSelectedImage(image)
-        setIsFullscreen(true)
-    }
+    const openFullscreen = (index) => {
+        setSelectedIndex(index);
+        setIsFullscreen(true);
+    };
 
     const closeFullscreen = () => {
-        setIsFullscreen(false)
-        setSelectedImage(null)
-    }
+        setIsFullscreen(false);
+        setSelectedIndex(null);
+    };
+
+    const showNextImage = () => {
+        setSelectedIndex((prevIndex) => (prevIndex + 1) % images.length);
+    };
+
+    const showPrevImage = () => {
+        setSelectedIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    };
 
     return (
         <div className='bg-footerBg text-white py-8 px-3 md:px-0'>
@@ -102,19 +109,33 @@ const Footer = () => {
                                         height={100}
                                         alt="Product"
                                         className='cursor-pointer'
-                                        onClick={() => openFullscreen(image)}
+                                        onClick={() => openFullscreen(index)}
                                     />
                                 </div>
                             ))
                         }
+                        
                     </div>
 
                     {
-                        isFullscreen && (
+                        isFullscreen && selectedIndex !== null && (
                             <div className='fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50'>
                                 <button onClick={closeFullscreen} className="absolute top-4 right-4 text-white bg-navBg rounded-full p-3 text-lg font-semibold"> X </button>
 
-                               <Image src={selectedImage} className='max-w-full max-h-full' />
+                                <button
+                                    onClick={showPrevImage}
+                                    className="absolute left-4 text-white bg-gray-800 rounded-full p-2"
+                                >
+                                    &#8592;
+                                </button>
+                                <button
+                                    onClick={showNextImage}
+                                    className="absolute right-4 text-white bg-gray-800 rounded-full p-2"
+                                >
+                                    &#8594;
+                                </button>
+
+                                <Image src={images[selectedIndex]} className='max-w-full max-h-full' />
                             </div>
                         )
                     }
