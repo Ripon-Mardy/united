@@ -9,10 +9,13 @@ import { FaNoteSticky } from "react-icons/fa6";
 import GetAQuoteForm from '@/components/Get_a_quote_form';
 import ProductExplore from '@/components/ProductExplore';
 import Product from '@/components/Product';
+import Product_Details from '@/components/Product_Details';
 
 const page = () => {
 
-    const text = "These 4-wheel electric forklifts is ready to face some of the most difficult material handling tasks. Max-8 series is your multipurpose workhorse that supplies great power, easy operation and leading performance to be the best solution for whatever you are lifting."
+    // const text = "These 4-wheel electric forklifts is ready to face some of the most difficult material handling tasks. Max-8 series is your multipurpose workhorse that supplies great power, easy operation and leading performance to be the best solution for whatever you are lifting."
+
+    const text = <Product_Details/>
 
     const [content, setContent] = useState(text);
 
@@ -73,7 +76,7 @@ const page = () => {
 
 
                     <div>
-                        <p className='mt-4 md:text-lg'>{content}</p>
+                        <div className='mt-4 md:text-lg'>{content}</div>
                     </div>
 
 

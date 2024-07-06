@@ -20,7 +20,9 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning={true} className={poppins.className}>
         <Navbar/>
         <Contact/>
-        {children}
+       <div className="px-3">
+       {children}
+       </div>
         <Footer/>
       </body>
     </html>
