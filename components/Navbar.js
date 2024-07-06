@@ -133,9 +133,9 @@ const Navbar = () => {
 
       <div className=' bg-navBg text-white top-0 z-10'>
 
-        <div className='container mx-auto xl:flex items-center gap-16 hidden'>
-          <Link href={'#'} className='font-medium flex items-center gap-1 py-5'>Home</Link>
-          <Link href={'#'} className='font-medium flex items-center gap-1 relative group h-full py-5 duration-200 ease-in-out'>Products <FaAngleDown />
+        <div className='container mx-auto xl:flex items-center gap-14 hidden'>
+          <Link href={'#'} className='font-medium flex items-center gap-1 py-5 text-lg'>Home</Link>
+          <Link href={'#'} className='font-medium flex items-center gap-1 relative group h-full py-5 duration-200 ease-in-out text-lg'>Products <FaAngleDown />
 
             <ul className='absolute left-0 top-16  bg-white text-black w-72 flex flex-col gap-2 rounded-b-md invisible  group-hover:visible z-10 overflow-hidden'>
               <li className='hover:bg-gray-300 p-2 px-3'>Forklift</li>
@@ -149,7 +149,7 @@ const Navbar = () => {
 
           </Link>
 
-          <Link href={'#'} className='font-medium flex items-center gap-1 relative group h-full py-5 duration-200 ease-in-out'>Tires, Wheels & Rim <FaAngleDown />
+          <Link href={'#'} className='font-medium flex items-center gap-1 relative group h-full py-5 duration-200 ease-in-out text-lg'>Tires, Wheels & Rim <FaAngleDown />
 
             <ul className='absolute left-0 top-16  bg-white text-black w-72 flex flex-col gap-2 rounded-b-md invisible  group-hover:visible z-10 overflow-hidden'>
               <li className='hover:bg-gray-300 p-2 px-3'>Forklift</li>
@@ -163,36 +163,7 @@ const Navbar = () => {
 
           </Link>
 
-          <Link href={'#'} className='font-medium flex items-center gap-1 relative group h-full py-5 duration-200 ease-in-out'>Batteries <FaAngleDown />
-
-            <ul className='absolute left-0 top-16  bg-white text-black w-72 flex flex-col gap-2 rounded-b-md invisible  group-hover:visible z-10 overflow-hidden'>
-              <li className='hover:bg-gray-300 p-2 px-3'>Forklift</li>
-              <li className='hover:bg-gray-300 p-2 px-3'>Warehouse Equipment</li>
-              <li className='hover:bg-gray-300 p-2 px-3'>Material Handling Equipment</li>
-              <li className='hover:bg-gray-300 p-2 px-3'>Lifts & Cranes</li>
-              <li className='hover:bg-gray-300 p-2 px-3'>Construction Equipment</li>
-              <li className='hover:bg-gray-300 p-2 px-3'>Lithium Powered Equipment</li>
-              <li className='hover:bg-gray-300 p-2 px-3'>Others</li>
-            </ul>
-
-          </Link>
-
-
-          <Link href={'#'} className='font-medium flex items-center gap-1 relative group h-full py-5 duration-200 ease-in-out'>Racking & Furniture <FaAngleDown />
-
-            <ul className='absolute left-0 top-16  bg-white text-black w-72 flex flex-col gap-2 rounded-b-md invisible  group-hover:visible z-10 overflow-hidden'>
-              <li className='hover:bg-gray-300 p-2 px-3'>Forklift</li>
-              <li className='hover:bg-gray-300 p-2 px-3'>Warehouse Equipment</li>
-              <li className='hover:bg-gray-300 p-2 px-3'>Material Handling Equipment</li>
-              <li className='hover:bg-gray-300 p-2 px-3'>Lifts & Cranes</li>
-              <li className='hover:bg-gray-300 p-2 px-3'>Construction Equipment</li>
-              <li className='hover:bg-gray-300 p-2 px-3'>Lithium Powered Equipment</li>
-              <li className='hover:bg-gray-300 p-2 px-3'>Others</li>
-            </ul>
-
-          </Link>
-
-          <Link href={'#'} className='font-medium flex items-center gap-1 relative group h-full py-5 duration-200 ease-in-out'>Spare & Service <FaAngleDown />
+          <Link href={'#'} className='font-medium flex items-center gap-1 relative group h-full py-5 duration-200 ease-in-out text-lg'>Batteries <FaAngleDown />
 
             <ul className='absolute left-0 top-16  bg-white text-black w-72 flex flex-col gap-2 rounded-b-md invisible  group-hover:visible z-10 overflow-hidden'>
               <li className='hover:bg-gray-300 p-2 px-3'>Forklift</li>
@@ -207,7 +178,36 @@ const Navbar = () => {
           </Link>
 
 
-          <Link href={'#'} className='font-medium flex items-center gap-1 relative group h-full py-5 duration-200 ease-in-out'>Rental <FaAngleDown />
+          <Link href={'#'} className='font-medium flex items-center gap-1 relative group h-full py-5 duration-200 ease-in-out text-lg'>Racking & Furniture <FaAngleDown />
+
+            <ul className='absolute left-0 top-16  bg-white text-black w-72 flex flex-col gap-2 rounded-b-md invisible  group-hover:visible z-10 overflow-hidden'>
+              <li className='hover:bg-gray-300 p-2 px-3'>Forklift</li>
+              <li className='hover:bg-gray-300 p-2 px-3'>Warehouse Equipment</li>
+              <li className='hover:bg-gray-300 p-2 px-3'>Material Handling Equipment</li>
+              <li className='hover:bg-gray-300 p-2 px-3'>Lifts & Cranes</li>
+              <li className='hover:bg-gray-300 p-2 px-3'>Construction Equipment</li>
+              <li className='hover:bg-gray-300 p-2 px-3'>Lithium Powered Equipment</li>
+              <li className='hover:bg-gray-300 p-2 px-3'>Others</li>
+            </ul>
+
+          </Link>
+
+          <Link href={'#'} className='font-medium flex items-center gap-1 relative group h-full py-5 duration-200 ease-in-out text-lg'>Spare & Service <FaAngleDown />
+
+            <ul className='absolute left-0 top-16  bg-white text-black w-72 flex flex-col gap-2 rounded-b-md invisible  group-hover:visible z-10 overflow-hidden'>
+              <li className='hover:bg-gray-300 p-2 px-3'>Forklift</li>
+              <li className='hover:bg-gray-300 p-2 px-3'>Warehouse Equipment</li>
+              <li className='hover:bg-gray-300 p-2 px-3'>Material Handling Equipment</li>
+              <li className='hover:bg-gray-300 p-2 px-3'>Lifts & Cranes</li>
+              <li className='hover:bg-gray-300 p-2 px-3'>Construction Equipment</li>
+              <li className='hover:bg-gray-300 p-2 px-3'>Lithium Powered Equipment</li>
+              <li className='hover:bg-gray-300 p-2 px-3'>Others</li>
+            </ul>
+
+          </Link>
+
+
+          <Link href={'#'} className='font-medium flex items-center gap-1 relative group h-full py-5 duration-200 ease-in-out text-lg'>Rental <FaAngleDown />
 
             <ul className='absolute left-0 top-16  bg-white text-black w-72 flex flex-col gap-2 rounded-b-md invisible  group-hover:visible z-10 overflow-hidden'>
               <li className='hover:bg-gray-300 p-2 px-3'>Forklift</li>

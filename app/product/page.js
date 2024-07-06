@@ -6,9 +6,9 @@ import Link from 'next/link'
 // === icons ===
 import { TiWorld } from "react-icons/ti";
 import { FaNoteSticky } from "react-icons/fa6";
-import ProductExplore from '@/components/product_explore/ProductExplore';
-import Product from '@/components/product/Product';
 import GetAQuoteForm from '@/components/Get_a_quote_form';
+import ProductExplore from '@/components/ProductExplore';
+import Product from '@/components/Product';
 
 const page = () => {
 
@@ -57,7 +57,7 @@ const page = () => {
 
                     <div className='md:w-1/2'>
                         <h1 className='text-3xl font-semibold mt-5 md:mt-0 mb-5'>1.5-3.5T Electric Forklift</h1>
-                        <p>Max-8 series can be applied in heavy loads (up to 3,5t), such as beverage industry and building materials.</p>
+                        <p className='text-lg'>Max-8 series can be applied in heavy loads (up to 3,5t), such as beverage industry and building materials.</p>
                     </div>
                 </div>
 
@@ -89,7 +89,7 @@ const page = () => {
                 <h1 className='text-2xl font-semibold'>Explore More Product</h1>
 
                 <div className='mt-3 opacity-100'>
-                   <ProductExplore/>
+                  <ProductExplore/>
 
                 </div>
 

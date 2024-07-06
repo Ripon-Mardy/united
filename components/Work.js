@@ -4,48 +4,46 @@ import Image from 'next/image';
 
 
 // === images work === 
-import work1 from './../../public/Image/Work with/1.jpg'
-import work2 from './../../public/Image/Work with/2.jpg'
-import work3 from './../../public/Image/Work with/3.png'
-import work4 from './../../public/Image/Work with/4.png'
-import work5 from './../../public/Image/Work with/5.png'
-import work6 from './../../public/Image/Work with/6.jpg'
-import work7 from './../../public/Image/Work with/7.png'
-import work8 from './../../public/Image/Work with/8.png'
+import work1 from './../public/Image/Work with/1.jpg'
+import work2 from './../public/Image/Work with/2.jpg'
+import work3 from './../public/Image/Work with/3.png'
+import work4 from './../public/Image/Work with/4.png'
+import work5 from './../public/Image/Work with/5.png'
+import work6 from './../public/Image/Work with/6.jpg'
+import work7 from './../public/Image/Work with/7.png'
+import work8 from './../public/Image/Work with/8.png'
 
 // === images partnar ===
-import partner1 from './../../public/Image/partnar/1.png'
-import partner2 from './../../public/Image/partnar/2.png'
-import partner3 from './../../public/Image/partnar/3.png'
-import partner4 from './../../public/Image/partnar/4.png'
-import partner5 from './../../public/Image/partnar/5.png'
-import partner6 from './../../public/Image/partnar/6.jpg'
-import partner7 from './../../public/Image/partnar/7.png'
-import partner8 from './../../public/Image/partnar/8.png'
-import partner9 from './../../public/Image/partnar/9.png'
-import partner10 from './../../public/Image/partnar/10.png'
-import partner11 from './../../public/Image/partnar/11.jpg'
-import partner12 from './../../public/Image/partnar/12.jpg'
-import partner13 from './../../public/Image/partnar/13.jpg'
-import partner14 from './../../public/Image/partnar/14.jpg'
-import partner15 from './../../public/Image/partnar/15.png'
-import partner16 from './../../public/Image/partnar/16.png'
-import partner17 from './../../public/Image/partnar/17.jpg'
-import partner18 from './../../public/Image/partnar/18.png'
-import partner19 from './../../public/Image/partnar/19.png'
-import partner20 from './../../public/Image/partnar/20.png'
-import partner21 from './../../public/Image/partnar/21.png'
-import partner22 from './../../public/Image/partnar/22.jpg'
-import partner23 from './../../public/Image/partnar/23.png'
-import partner24 from './../../public/Image/partnar/24.png'
+import partner1 from './../public/Image/partnar/1.png'
+import partner2 from './../public/Image/partnar/2.png'
+import partner3 from './../public/Image/partnar/3.png'
+import partner4 from './../public/Image/partnar/4.png'
+import partner5 from './../public/Image/partnar/5.png'
+import partner6 from './../public/Image/partnar/6.jpg'
+import partner7 from './../public/Image/partnar/7.png'
+import partner8 from './../public/Image/partnar/8.png'
+import partner9 from './../public/Image/partnar/9.png'
+import partner10 from './../public/Image/partnar/10.png'
+import partner11 from './../public/Image/partnar/11.jpg'
+import partner12 from './../public/Image/partnar/12.jpg'
+import partner13 from './../public/Image/partnar/13.jpg'
+import partner14 from './../public/Image/partnar/14.jpg'
+import partner15 from './../public/Image/partnar/15.png'
+import partner16 from './../public/Image/partnar/16.png'
+import partner17 from './../public/Image/partnar/17.jpg'
+import partner18 from './../public/Image/partnar/18.png'
+import partner19 from './../public/Image/partnar/19.png'
+import partner20 from './../public/Image/partnar/20.png'
+import partner21 from './../public/Image/partnar/21.png'
+import partner22 from './../public/Image/partnar/22.jpg'
+import partner23 from './../public/Image/partnar/23.png'
+import partner24 from './../public/Image/partnar/24.png'
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import './style.css'
-
 // Import Swiper styles
-import 'swiper/css';
+// import 'swiper/css';
 import 'swiper/css/pagination';
 
 
@@ -55,11 +53,11 @@ import { Autoplay, Pagination } from 'swiper/modules';
 const Work = () => {
   return (
     <>
-    <div className='container mx-auto px-3 md:px-0 py-8'>
+    <div className='container mx-auto px-3 md:px-0 py-16'>
       <h1 className='md:text-4xl text-3xl text-textHeadingColor font-semibold text-center py-12'>We Work With</h1>
        <Swiper
         slidesPerView={1}
-        spaceBetween={10}
+        spaceBetween={4}
         // pagination={{
         //   clickable: true,
         // }}
@@ -137,11 +135,11 @@ const Work = () => {
 
 
 
-    <div className='container mx-auto px-3 md:px-0 py-10'>
+    <div className='container mx-auto px-3 md:px-0 py-16'>
       <h1 className='md:text-4xl text-3xl text-textHeadingColor font-semibold text-center py-12'>Some Of Our Valued Partners. Why You Not Next?</h1>
        <Swiper
         slidesPerView={1}
-        spaceBetween={10}
+        spaceBetween={6}
         // pagination={{
         //   clickable: true,
         // }}

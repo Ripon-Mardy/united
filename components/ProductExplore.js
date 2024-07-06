@@ -8,10 +8,10 @@ import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import './style.css'
+// import './style.css'
 
 // === image === 
-import ep1 from './../../public/Image/Product review/Explore Product/ep1.png'
+import ep1 from './../public/Image/Product review/Explore Product/ep1.png'
 
 
 // import required modules
@@ -50,35 +50,35 @@ const ProductExplore = () => {
         <SwiperSlide>
             <div className='bg-white'>
             <Image src={ep1}></Image>
-            <h1 className='text-black text-2xl'>1.5T Three Wheel Electric Forklift</h1>
+            <h1 className='text-black text-2xl text-center'>1.5T Three Wheel Electric Forklift</h1>
             </div>
         </SwiperSlide>
 
         <SwiperSlide>
             <div className='bg-white'>
             <Image src={ep1}></Image>
-            <h1 className='text-black text-2xl'>1.5T Three Wheel Electric Forklift</h1>
+            <h1 className='text-black text-2xl text-center'>1.5T Three Wheel Electric Forklift</h1>
             </div>
         </SwiperSlide>
 
         <SwiperSlide>
             <div className='bg-white'>
             <Image src={ep1}></Image>
-            <h1 className='text-black text-2xl'>1.5T Three Wheel Electric Forklift</h1>
+            <h1 className='text-black text-2xl text-center'>1.5T Three Wheel Electric Forklift</h1>
             </div>
         </SwiperSlide>
 
         <SwiperSlide>
             <div className='bg-white'>
             <Image src={ep1}></Image>
-            <h1 className='text-black text-2xl'>1.5T Three Wheel Electric Forklift</h1>
+            <h1 className='text-black text-2xl text-center'>1.5T Three Wheel Electric Forklift</h1>
             </div>
         </SwiperSlide>
 
         <SwiperSlide>
             <div className='bg-white'>
             <Image src={ep1}></Image>
-            <h1 className='text-black text-2xl'>1.5T Three Wheel Electric Forklift</h1>
+            <h1 className='text-black text-2xl text-center'>1.5T Three Wheel Electric Forklift</h1>
             </div>
         </SwiperSlide>
       </Swiper>
