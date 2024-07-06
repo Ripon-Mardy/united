@@ -14,7 +14,7 @@ import product8 from './../public/Image/products/p8.jpeg'
 
 const Products = () => {
   return (
-    <div className=' px-3 md:px-0 py-16 bg-productBg'>
+    <div className=' px-3 md:px-0 py-20 mt-20 bg-productBg'>
 
     <div className='container mx-auto'>
 
@@ -26,38 +26,38 @@ const Products = () => {
        <div className='md:grid md:grid-cols-4 grid-cols-1 grid gap-10 mt-10'>
         <Link href={'/product-category'} className='bg-white p-2 py-4 rounded-md text-center hover:shadow-md duration-200 ease-in-out w-full border-b-2 hover:border-hoverborder inline-block'>
             <Image src={product1} width={330} height={330} className='mx-auto'></Image>
-            <h1 className='text-2xl font-semibold mt-2'>Traction Batteries</h1>
+            <h1 className='text-xl font-semibold mt-2'>Traction Batteries</h1>
         </Link>
 
         <Link href={'#'} className='bg-white  py-4 p-2 rounded-md text-center hover:shadow-md duration-200 ease-in-out w-full border-b-2 hover:border-hoverborder inline-block'>
             <Image src={product2} width={330} height={330} className='mx-auto'></Image>
-            <h1 className='text-2xl font-semibold mt-2'>Stacker/Reach Truck Wheel</h1>
+            <h1 className='text-xl font-semibold mt-2'>Stacker/Reach Truck Wheel</h1>
         </Link>
 
 
         <Link href={'#'} className='bg-white  py-4 p-2 rounded-md text-center hover:shadow-md duration-200 ease-in-out w-full border-b-2 hover:border-hoverborder inline-block'>
             <Image src={product4} width={330} height={330} className='mx-auto'></Image>
-            <h1 className='text-2xl font-semibold mt-2'>3.0-12.0T Multi Directional (Side Loader) Forklift</h1>
+            <h1 className='text-xl font-semibold mt-2'>3.0-12.0T Multi Directional (Side Loader) Forklift</h1>
         </Link>
 
         <Link href={'#'} className='bg-white  py-4 p-2 rounded-md text-center hover:shadow-md duration-200 ease-in-out w-full border-b-2 hover:border-hoverborder inline-block'>
             <Image src={product5} width={330} height={330} className='mx-auto'></Image>
-            <h1 className='text-2xl font-semibold mt-2'>1.6T Very Narrow Aisle Man Up Turret Truck</h1>
+            <h1 className='text-xl font-semibold mt-2'>1.6T Very Narrow Aisle Man Up Turret Truck</h1>
         </Link>
 
         <Link href={'#'} className='bg-white  py-4 p-2 rounded-md text-center hover:shadow-md duration-200 ease-in-out w-full border-b-2 hover:border-hoverborder inline-block'>
             <Image src={product6} width={330} height={330} className='mx-auto'></Image>
-            <h1 className='text-2xl font-semibold mt-2'>Wheel Rim</h1>
+            <h1 className='text-xl font-semibold mt-2'>Wheel Rim</h1>
         </Link>
 
         <Link href={'#'} className='bg-white  py-4 p-2 rounded-md text-center hover:shadow-md duration-200 ease-in-out w-full border-b-2 hover:border-hoverborder inline-block'>
             <Image src={product7} width={330} height={330} className='mx-auto'></Image>
-            <h1 className='text-2xl font-semibold mt-2'>Solid Tire</h1>
+            <h1 className='text-xl font-semibold mt-2'>Solid Tire</h1>
         </Link>
 
         <Link href={'#'} className='bg-white  py-4 p-2 rounded-md text-center hover:shadow-md duration-200 ease-in-out w-full border-b-2 hover:border-hoverborder inline-block'>
             <Image src={product8} width={330} height={330} className='mx-auto'></Image>
-            <h1 className='text-2xl font-semibold mt-2'>1.5-2.5T Articulated VNA Forklift</h1>
+            <h1 className='text-xl font-semibold mt-2'>1.5-2.5T Articulated VNA Forklift</h1>
         </Link>
 
        </div>

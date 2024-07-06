@@ -52,16 +52,16 @@ const Footer = () => {
             <div className='container mx-auto md:flex justify-between flex-col md:flex-row'>
 
                 <div>
-                    <h1 className='text-2xl font-semibold'>NAVIGATION</h1>
+                    <h1 className='md:text-2xl font-semibold text-lg'>NAVIGATION</h1>
                     <div className='flex flex-col gap-6 mt-5'>
-                        <Link href={'#'} className='flex items-center gap-2 text-textNavColor'> <FaChevronRight className='text-sm' /> About Us</Link>
-                        <Link href={'#'} className='flex items-center gap-2 text-textNavColor'> <FaChevronRight className='text-sm' /> Contact Us</Link>
-                        <Link href={'#'} className='flex items-center gap-2 text-textNavColor'> <FaChevronRight className='text-sm' /> Sitemap</Link>
+                        <Link href={'#'} className='flex items-center gap-2 text-textNavColor text-sm'> <FaChevronRight className='text-sm' /> About Us</Link>
+                        <Link href={'#'} className='flex items-center gap-2 text-textNavColor text-sm'> <FaChevronRight className='text-sm' /> Contact Us</Link>
+                        <Link href={'#'} className='flex items-center gap-2 text-textNavColor text-sm'> <FaChevronRight className='text-sm' /> Sitemap</Link>
                     </div>
                 </div>
 
                 <div className='mt-8 md:mt-0'>
-                    <h1 className='text-2xl font-semibold'>Connect us</h1>
+                    <h1 className='md:text-2xl font-semibold text-lg'>Connect us</h1>
                     <div className="flex gap-5 mt-5">
                         <Link
                             href={"#"}
@@ -97,7 +97,7 @@ const Footer = () => {
                 </div>
 
                 <div className='flex items-start flex-col mt-8 md:mt-0'>
-                    <h1 className='text-2xl font-semibold'>Gallery</h1>
+                    <h1 className='md:text-2xl text-lg font-semibold'>Gallery</h1>
                     <div className='grid grid-cols-3 gap-5 mt-5'>
 
                         {
@@ -146,7 +146,7 @@ const Footer = () => {
             <div className='w-full h-0.5 bg-gray-800 mt-12'></div>
 
             <div className='container mx-auto mt-5 text-textNavColor'>
-                <div>
+                <div className='md:text-lg text-sm text-center'>
                     <p>Copyright © 2021 United Machinery Bangladesh.All Rights Reserved.</p>
                     <h1>Developed By Tritiyo Limited
                     </h1>

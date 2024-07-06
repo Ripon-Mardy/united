@@ -17,7 +17,8 @@ module.exports = {
       textColor : {
         "textNavColor" : "#999",
         "headingColor": "#eee",
-        "textHeadingColor" : "#232323"
+        "textHeadingColor" : "#232323",
+        "paraColor" : "#494949"
       },
       backgroundColor: {
         "facebookBg": "#4B69A8",

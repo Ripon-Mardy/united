@@ -10,9 +10,9 @@ export default function Home() {
     <>
     <Hero/>
     <Work/>
-    <Aboutus/>
     <Services/>
     <Products/>
+    <Aboutus/>
     <Testimonials/>
     </>
   );

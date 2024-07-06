@@ -53,7 +53,7 @@ import { Autoplay, Pagination } from 'swiper/modules';
 const Work = () => {
   return (
     <>
-    <div className='container mx-auto px-3 md:px-0 py-16'>
+    <div className='container mx-auto px-3 md:px-0 md:py-20 py-10'>
       <h1 className='md:text-4xl text-3xl text-textHeadingColor font-semibold text-center py-12'>We Work With</h1>
        <Swiper
         slidesPerView={1}
@@ -75,7 +75,7 @@ const Work = () => {
             spaceBetween: 40,
           },
           1024: {
-            slidesPerView: 5,
+            slidesPerView: 6,
             spaceBetween: 50,
           },
         }}
@@ -135,7 +135,7 @@ const Work = () => {
 
 
 
-    <div className='container mx-auto px-3 md:px-0 py-16'>
+    <div className='container mx-auto px-3 md:px-0 md:py-20'>
       <h1 className='md:text-4xl text-3xl text-textHeadingColor font-semibold text-center py-12'>Some Of Our Valued Partners. Why You Not Next?</h1>
        <Swiper
         slidesPerView={1}
@@ -157,7 +157,7 @@ const Work = () => {
             spaceBetween: 40,
           },
           1024: {
-            slidesPerView: 5,
+            slidesPerView: 6,
             spaceBetween: 50,
           },
         }}
