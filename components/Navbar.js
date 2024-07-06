@@ -45,8 +45,10 @@ const Navbar = () => {
   return (
     <>
       <div className="container mx-auto w-full py-3 px-3 md:px-0">
+
+
         <div className="flex items-center justify-between">
-          <div className="flex justify-between items-center w-full">
+          <div className="flex items-center justify-between w-full">
             {/* ====logo === */}
             <div>
               <Link href={"#"} >
@@ -60,6 +62,8 @@ const Navbar = () => {
 
             {/* ==== end mobile bar === */}
           </div>
+
+         
           {/* === socail === */}
           <div className="xl:flex flex-col hidden w-full">
 
@@ -126,6 +130,9 @@ const Navbar = () => {
 
           </div>
         </div>
+
+
+
       </div>
 
 

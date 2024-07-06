@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image';
 
@@ -22,6 +23,23 @@ import footer4 from './../public/Image/Footer Gallary/footer4.jpg'
 import footer5 from './../public/Image/Footer Gallary/footer5.jpeg'
 
 const Footer = () => {
+
+    const [isFullscreen, setIsFullscreen] = useState(false);
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const images = [ footer1, footer2, footer3, footer4, footer5];
+
+
+    const openFullscreen = (image) => {
+        setSelectedImage(image)
+        setIsFullscreen(true)
+    }
+
+    const closeFullscreen = () => {
+        setIsFullscreen(false)
+        setSelectedImage(null)
+    }
+
     return (
         <div className='bg-footerBg text-white py-8 px-3 md:px-0'>
             <div className='container mx-auto md:flex justify-between flex-col md:flex-row'>
@@ -74,12 +92,32 @@ const Footer = () => {
                 <div className='flex items-start flex-col mt-8 md:mt-0'>
                     <h1 className='text-2xl font-semibold'>Gallery</h1>
                     <div className='grid grid-cols-3 gap-5 mt-5'>
-                        <Image src={footer1} width={100} height={100}></Image>
-                        <Image src={footer2} width={100} height={100}></Image>
-                        <Image src={footer3} width={100} height={100}></Image>
-                        <Image src={footer4} width={100} height={100}></Image>
-                        <Image src={footer5} width={100} height={100}></Image>
+
+                        {
+                            images.map((image, index) => (
+                                <div key={index}>
+                                    <Image
+                                        src={image}
+                                        width={100}
+                                        height={100}
+                                        alt="Product"
+                                        className='cursor-pointer'
+                                        onClick={() => openFullscreen(image)}
+                                    />
+                                </div>
+                            ))
+                        }
                     </div>
+
+                    {
+                        isFullscreen && (
+                            <div className='fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50'>
+                                <button onClick={closeFullscreen} className="absolute top-4 right-4 text-white bg-navBg rounded-full p-3 text-lg font-semibold"> X </button>
+
+                               <Image src={selectedImage} className='max-w-full max-h-full' />
+                            </div>
+                        )
+                    }
                 </div>
 
             </div>
@@ -93,7 +131,7 @@ const Footer = () => {
                     </h1>
                 </div>
             </div>
-          
+
         </div>
     )
 }
