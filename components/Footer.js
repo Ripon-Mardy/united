@@ -124,13 +124,13 @@ const Footer = () => {
 
                                 <button
                                     onClick={showPrevImage}
-                                    className="absolute left-4 text-white bg-gray-800 rounded-full p-2"
+                                    className="absolute left-4 text-white bg-navBg rounded-full p-2"
                                 >
                                     &#8592;
                                 </button>
                                 <button
                                     onClick={showNextImage}
-                                    className="absolute right-4 text-white bg-gray-800 rounded-full p-2"
+                                    className="absolute right-4 text-white bg-navBg rounded-full p-2"
                                 >
                                     &#8594;
                                 </button>
