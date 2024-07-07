@@ -686,25 +686,23 @@ const page = () => {
                                     ></Image>
                                     <div>
                                         <h1 className="md:text-3xl text-2xl mt-4 font-semibold">
-                                            {" "}
-                                            {product.Product_title}{" "}
+                                            {product.Product_title}
                                         </h1>
                                         <p className="md:text-lg mt-3">
-                                            {" "}
-                                            {product.product_content}{" "}
+                                            {product.product_content}
                                         </p>
                                         <button
                                             class="relative px-8 py-2 rounded-md bg-white isolation-auto z-10 border border-gray-500
-before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-navBg hover:text-white hover:duration-1000 before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 font-semibold mt-4 flex items-center gap-2 uppercase"
+before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-navBg hover:text-white hover:duration-1000 before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 font-semibold mt-4 flex items-center gap-2 uppercase text-sm"
                                         >
-                                            more <FaArrowRight />{" "}
+                                            more <FaArrowRight />
                                         </button>
                                     </div>
                                 </div>
                             ))}
                         </div>
 
-                        <div className="flex items-center justify-center mt-10 ">
+                        <div className="flex mt-10 ">
                             <Link
                                 href={"#"}
                                 className=" border border-gray-200 px-4 p-1 bg-navBg text-white hover:bg-blue-900 duration-200 ease-in-out hover:text-white"
