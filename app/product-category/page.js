@@ -704,10 +704,10 @@ before:absolute before:w-full before:transition-all before:duration-700 before:h
                             ))}
                         </div>
 
-                        <div className="flex items-center justify-center mt-10">
+                        <div className="flex items-center justify-center mt-10 ">
                             <Link
                                 href={"#"}
-                                className=" border border-gray-200 px-4 p-1 hover:bg-blue-900 duration-200 ease-in-out hover:text-white"
+                                className=" border border-gray-200 px-4 p-1 bg-navBg text-white hover:bg-blue-900 duration-200 ease-in-out hover:text-white"
                             >
                                 1
                             </Link>
@@ -721,7 +721,7 @@ before:absolute before:w-full before:transition-all before:duration-700 before:h
                                 href={"#"}
                                 className="flex items-center gap-2 border border-gray-200 px-4 p-1 hover:bg-blue-900 duration-200 ease-in-out hover:text-white"
                             >
-                                Next Page <FaAnglesRight />{" "}
+                                Next Page <FaAnglesRight />
                             </Link>
                         </div>
                     </div>
