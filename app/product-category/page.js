@@ -15,7 +15,6 @@ import product7 from "./../../public/Image/product-category/7.png";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaAnglesRight } from "react-icons/fa6";
 import { FaAngleDown } from "react-icons/fa";
-import { CiFilter } from "react-icons/ci";
 import { AiOutlineBars } from "react-icons/ai";
 
 const page = () => {
@@ -125,8 +124,8 @@ const page = () => {
 
                 {/* === product list === */}
 
-                <div className="md:flex md:gap-16">
-                <div className="mt-10">
+                <div className="md:flex gap-10">
+                <div className="mt-10 md:hidden">
                    <div className='md:hidden flex items-center justify-between bg-navBg text-white p-2 rounded-sm mb-4'>
                         <h1 className='font-medium text-base capitalize'>Product Filter</h1>
                         <AiOutlineBars onClick={handleFilterBarClick} className='text-xl cursor-pointer'/>
