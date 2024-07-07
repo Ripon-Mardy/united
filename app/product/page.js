@@ -25,14 +25,8 @@ const page = () => {
     const [isCategory, setIsCategory] =  useState(false);
     const [dropdown, setDropdown] = useState(null)
 
-
-
-
-
-
     const handleProductButton = (tabname) => {
         setContent(text)
-
     }
 
     const handleQuoteButton = () => {
@@ -48,8 +42,6 @@ const page = () => {
         <>
 
             <div className=' productImageCover py-12 md:py-28'>
-
-
                 <div className=' container mx-auto px-3 md:px-0'>
                     <h1 className='text-white font-semibold md:text-4xl text-3xl'>1.5-2.0T Electric Forklift</h1>
                     <div className='text-white  mt-3'>
