@@ -1,160 +1,181 @@
-'use client'
-import React, { useState } from 'react'
-import Link from 'next/link'
-import Image from 'next/image';
-
-// === icosn === 
-import { FaChevronRight } from "react-icons/fa6";
+"use client";
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import {
-    FaFacebookF,
-    FaYoutube,
-    FaLinkedin,
-    FaInstagram,
-    FaWhatsappSquare,
-    FaBars,
-    FaTimes
+  FaChevronRight,
+  FaChevronLeft,
+  FaFacebookF,
+  FaYoutube,
+  FaLinkedin,
+  FaInstagram,
+  FaWhatsappSquare,
+  FaTimes
 } from "react-icons/fa";
-
-// === images === 
-import footer1 from './../public/Image/Footer Gallary/footer1.png'
-import footer2 from './../public/Image/Footer Gallary/footer2.jpg'
-import footer3 from './../public/Image/Footer Gallary/footer3.png'
-import footer4 from './../public/Image/Footer Gallary/footer4.jpg'
-import footer5 from './../public/Image/Footer Gallary/footer5.jpeg'
+import axiosInstance from "@/helpers/axiosInstance";
 
 const Footer = () => {
+  const [gallery, setGallery] = useState([]);
+  const [isFullscreen, setIsFullscreen] = useState(false); // Full-screen state
+  const [currentIndex, setCurrentIndex] = useState(0); // Current image index
 
-    const [isFullscreen, setIsFullscreen] = useState(false);
-    const [selectedIndex, setSelectedIndex] = useState(null);
-
-    const images = [footer1, footer2, footer3, footer4, footer5];
-
-    const openFullscreen = (index) => {
-        setSelectedIndex(index);
-        setIsFullscreen(true);
+  // Fetch gallery data from API
+  useEffect(() => {
+    const fetchGallery = async () => {
+      try {
+        const res = await axiosInstance.get("/posts?term_type=gallery");
+        setGallery(res.data.data); // Set the gallery data
+      } catch (error) {
+        console.log(error.message);
+      }
     };
+    fetchGallery();
+  }, []);
 
-    const closeFullscreen = () => {
-        setIsFullscreen(false);
-        setSelectedIndex(null);
-    };
+  // Limiting gallery display to 4 images
+  const galleryLimit = gallery.slice(0, 4); // Get only first 3 images
 
-    const showNextImage = () => {
-        setSelectedIndex((prevIndex) => (prevIndex + 1) % images.length);
-    };
+  // Open full-screen viewer
+  const openFullscreen = (index) => {
+    setCurrentIndex(index);
+    setIsFullscreen(true);
+  };
 
-    const showPrevImage = () => {
-        setSelectedIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-    };
+  // Close full-screen viewer
+  const closeFullscreen = () => {
+    setIsFullscreen(false);
+  };
 
-    return (
-        <div className='bg-footerBg text-white py-8 px-3 md:px-0'>
-            <div className='container mx-auto md:flex justify-between flex-col md:flex-row'>
+  // Show next image
+  const showNextImage = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === gallery.length - 1 ? 0 : prevIndex + 1
+    );
+  };
 
-                <div>
-                    <h1 className='md:text-2xl font-semibold text-lg'>NAVIGATION</h1>
-                    <div className='flex flex-col gap-6 mt-5'>
-                        <Link href={'#'} className='flex items-center gap-2 text-textNavColor text-sm'> <FaChevronRight className='text-sm' /> About Us</Link>
-                        <Link href={'#'} className='flex items-center gap-2 text-textNavColor text-sm'> <FaChevronRight className='text-sm' /> Contact Us</Link>
-                        <Link href={'#'} className='flex items-center gap-2 text-textNavColor text-sm'> <FaChevronRight className='text-sm' /> Sitemap</Link>
-                    </div>
-                </div>
+  // Show previous image
+  const showPrevImage = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? gallery.length - 1 : prevIndex - 1
+    );
+  };
 
-                <div className='mt-8 md:mt-0'>
-                    <h1 className='md:text-2xl font-semibold text-lg'>Connect us</h1>
-                    <div className="flex gap-5 mt-5">
-                        <Link
-                            href={"#"}
-                            className="bg-facebookBg p-1.5 rounded-full text-white cursor-pointer hover:border border hover:border-gray-600 hover:bg-transparent ease-in-out duration-200"
-                        >
-                            <FaFacebookF />
-                        </Link>
-                        <Link
-                            href={"#"}
-                            className="bg-youtubeBg p-1.5 rounded-full text-white cursor-pointer hover:border border hover:border-gray-600 hover:bg-transparent  ease-in-out duration-200"
-                        >
-                            <FaYoutube />
-                        </Link>
-                        <Link
-                            href={"#"}
-                            className="bg-linkedinBg p-1.5 rounded-full text-white cursor-pointer hover:border border hover:border-gray-600 hover:bg-transparent ease-in-out duration-200"
-                        >
-                            <FaLinkedin />
-                        </Link>
-                        <Link
-                            href={"#"}
-                            className="bg-instagramBg p-1.5 rounded-full text-white cursor-pointer hover:border border hover:border-gray-600 hover:bg-transparent ease-in-out duration-200"
-                        >
-                            <FaInstagram />
-                        </Link>
-                        <Link
-                            href={"#"}
-                            className="bg-whatsappBg p-1.5 rounded-full text-white cursor-pointer hover:border border hover:border-gray-600 hover:bg-transparent ease-in-out duration-200"
-                        >
-                            <FaWhatsappSquare />
-                        </Link>
-                    </div>
-                </div>
-
-                <div className='flex items-start flex-col mt-8 md:mt-0'>
-                    <h1 className='md:text-2xl text-lg font-semibold'>Gallery</h1>
-                    <div className='grid grid-cols-3 gap-5 mt-5'>
-
-                        {
-                            images.map((image, index) => (
-                                <div key={index}>
-                                    <Image
-                                        src={image}
-                                        width={100}
-                                        height={100}
-                                        alt="Product"
-                                        className='cursor-pointer'
-                                        onClick={() => openFullscreen(index)}
-                                    />
-                                </div>
-                            ))
-                        }
-                        
-                    </div>
-
-                    {
-                        isFullscreen && selectedIndex !== null && (
-                            <div className='fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50'>
-                                <button onClick={closeFullscreen} className="absolute top-4 right-4 text-white bg-navBg rounded-full p-3 text-lg font-semibold"> X </button>
-
-                                <button
-                                    onClick={showPrevImage}
-                                    className="absolute left-4 text-white bg-navBg rounded-full p-2"
-                                >
-                                    &#8592;
-                                </button>
-                                <button
-                                    onClick={showNextImage}
-                                    className="absolute right-4 text-white bg-navBg rounded-full p-2"
-                                >
-                                    &#8594;
-                                </button>
-
-                                <Image src={images[selectedIndex]} className='max-w-full max-h-full' />
-                            </div>
-                        )
-                    }
-                </div>
-
-            </div>
-
-            <div className='w-full h-0.5 bg-gray-800 mt-12'></div>
-
-            <div className='container mx-auto mt-5 text-textNavColor'>
-                <div className='md:text-lg text-sm text-center'>
-                    <p>Copyright © 2021 United Machinery Bangladesh.All Rights Reserved.</p>
-                    <h1>Developed By Tritiyo Limited
-                    </h1>
-                </div>
-            </div>
-
+  return (
+    <div className="bg-footerBg text-white py-8 px-3 md:px-0">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h2 className="md:text-xl font-semibold text-lg capitalize"> Navigation</h2>
+          <div className="flex flex-col gap-6 mt-5">
+            <Link href="#" className="flex items-center gap-2 text-textNavColor text-sm">
+              <FaChevronRight className="text-sm" /> About Us
+            </Link>
+            <Link href="#" className="flex items-center gap-2 text-textNavColor text-sm">
+              <FaChevronRight className="text-sm" /> Contact Us
+            </Link>
+            <Link href="#" className="flex items-center gap-2 text-textNavColor text-sm">
+              <FaChevronRight className="text-sm" /> Sitemap
+            </Link>
+          </div>
         </div>
-    )
-}
 
-export default Footer
+        <div className="mt-8 md:mt-0">
+          <h2 className="md:text-xl font-semibold text-lg">Connect us</h2>
+          <div className="flex gap-5 mt-5">
+            <Link href="#" className="bg-facebookBg p-1.5 rounded-full text-white">
+              <FaFacebookF />
+            </Link>
+            <Link href="#" className="bg-youtubeBg p-1.5 rounded-full text-white">
+              <FaYoutube />
+            </Link>
+            <Link href="#" className="bg-linkedinBg p-1.5 rounded-full text-white">
+              <FaLinkedin />
+            </Link>
+            <Link href="#" className="bg-instagramBg p-1.5 rounded-full text-white">
+              <FaInstagram />
+            </Link>
+            <Link href="#" className="bg-whatsappBg p-1.5 rounded-full text-white">
+              <FaWhatsappSquare />
+            </Link>
+          </div>
+        </div>
+
+        {/* Gallery Section with 'See More' Option */}
+        <div className="grid grid-cols-3 gap-4">
+          {galleryLimit.map((post, index) => (
+            <div key={post.id}>
+              <div className="border rounded overflow-hidden">
+                <Image
+                  src={post.featured_image}
+                  alt={post.name || "Gallery Image"}
+                  width={300}
+                  priority
+                  height={300}
+                  className="w-full cursor-pointer"
+                  onClick={() => openFullscreen(index)} // Open fullscreen on click
+                />
+              </div>
+            </div>
+          ))}
+
+          {/* 'See More' Button */}
+          {gallery.length > 4 && (
+            <div className="flex justify-center items-center">
+              <Link
+                href="/gallery"
+                className="text-white bg-navBg px-4 py-2 rounded-md text-center border border-gray-50 text-sm"
+              >
+                View All
+              </Link>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div className="w-full h-0.5 bg-gray-800 mt-12"></div>
+
+      <div className="container mx-auto mt-5 text-textNavColor">
+        <div className="text-sm text-center">
+          <p>Copyright © 2021 United Machinery Bangladesh. All Rights Reserved.</p>
+          <h2>Developed By Mathmozo It</h2>
+        </div>
+      </div>
+
+      {/* Full-screen image viewer */}
+      {isFullscreen && (
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-90 flex justify-center items-center">
+          <button
+            className="absolute top-5 right-5 text-white text-3xl"
+            onClick={closeFullscreen}
+          >
+            <FaTimes />
+          </button>
+          <button
+            className="absolute left-5 text-white text-3xl"
+            onClick={showPrevImage}
+          >
+            <FaChevronLeft />
+          </button>
+          <div className="max-w-3xl">
+            <Image
+              src={gallery[currentIndex].featured_image}
+              alt={gallery[currentIndex].name || "Gallery Image"}
+              width={800}
+              height={800}
+              className="w-full h-auto"
+              priority
+            />
+            {/* <p className="text-center text-white mt-4">{gallery[currentIndex].name}</p> */}
+          </div>
+          <button
+            className="absolute right-5 text-white text-3xl"
+            onClick={showNextImage}
+          >
+            <FaChevronRight />
+          </button>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Footer;

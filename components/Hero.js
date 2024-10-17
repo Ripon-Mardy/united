@@ -1,29 +1,53 @@
-'use client'
-
-import React, { useRef, useState } from 'react';
-import Image from 'next/image';
-
-// === images ===
-import banner1 from './../public/Image/Hero Banner/b1.jpg'
-import banner2 from './../public/Image/Hero Banner/b2.jpg'
-import banner3 from './../public/Image/Hero Banner/b3.jpg'
-import banner4 from './../public/Image/Hero Banner/b4.png'
-import banner5 from './../public/Image/Hero Banner/b5.jpg'
+"use client";
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import axiosInstance from "@/helpers/axiosInstance"; // Ensure axiosInstance is correctly imported
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// import './style.css'
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Loading from "./Loading";
 
 const Hero = () => {
+  const [slider, setSlider] = useState([]);
+  const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchSlider = async () => {
+      try {
+        const response = await axiosInstance.get(
+          "/posts?term_type=slider"
+        );
+        setSlider(response.data.data);
+      } catch (error) {
+        setError(error.message)
+      } finally {
+        setLoading(false)
+      }
+    };
+    fetchSlider();
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center">
+        <p className="text-red-500">Error: {error}</p>
+      </div>
+    );
+  }
+
   return (
-    <div className='container mx-auto px-3 md:px-0 md:py-5 w-full'>
+    <div className="container mx-auto px-3 md:px-0 md:py-5 w-full">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -38,39 +62,26 @@ const Hero = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper "
       >
-        <SwiperSlide>
-          <div   className='md:h-screen'>
-            <Image src={banner1} width={400} height={400} layout='responsive' className=' object-cover w-full'></Image>
-          </div>
-        </SwiperSlide>
+        {slider.map((slideItem, sliderIndex) => (
+          <SwiperSlide key={sliderIndex}>
+            <div className="md:h-screen">
+              <Image
+                src={slideItem?.featured_image}
+                width={500}
+                priority
+                height={300}
+                quality={90}
+                alt={slideItem.name}
+                className=" object-cover w-full"
+              ></Image>
+            </div>
+          </SwiperSlide>
+        ))}
 
-        <SwiperSlide>
-          <div className='md:h-[500px] h-[400]'>
-            <Image src={banner2} width={400} height={400} layout='responsive' className='rounded-md object-cover'></Image>
-          </div>
-        </SwiperSlide>
-
-        {/* <SwiperSlide>
-          <div className='md:h-[500px] h-[400]'>
-            <Image src={banner3} width={400} height={400} layout='responsive' className='rounded-md'></Image>
-          </div>
-        </SwiperSlide> */}
-
-        <SwiperSlide>
-          <div className='md:h-[500px] h-[400]'>
-            <Image src={banner4} width={400} height={400} layout='responsive' className='rounded-md object-cover'></Image>
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <div className='md:h-[500px] h-[400]'>
-            <Image src={banner5} width={400} height={400} layout='responsive' className='rounded-md'></Image>
-          </div>
-        </SwiperSlide>
 
       </Swiper>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

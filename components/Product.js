@@ -10,14 +10,12 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
-
-// import './style.css'
-
-// === images ==== 
-import product1 from './../public/Image/Product review/product1.png'
-
 // import required modules
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+
+
+
+
 
 const Product = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -37,10 +35,10 @@ const Product = () => {
                 className="mySwiper2"
             >
                 <SwiperSlide>
-                    <Image src={product1} width={100} height={100} layout='responsive' className='w-3'></Image>
+                    <Image src={productSlide1} width={100} height={100} alt='product' priority className='w-3'></Image>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image src={product1}></Image>
+                    <Image width={200} height={200} alt='product' priority src={productSlide1}></Image>
                 </SwiperSlide>
             </Swiper>
             <Swiper
@@ -53,10 +51,10 @@ const Product = () => {
                 className="mySwiper"
             >
                 <SwiperSlide>
-                    <Image src={product1}></Image>
+                    <Image width={200} height={200} alt='produt' priority src={productSlide1}></Image>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image src={product1}></Image>
+                    <Image width={200} height={200} alt='product' priority src={productSlide1}></Image>
                 </SwiperSlide>
             </Swiper>
 
