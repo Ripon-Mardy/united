@@ -6,8 +6,6 @@ import axiosInstance from "@/helpers/axiosInstance";
 
 const Services = () => {
   const [services, setServices] = useState([]);
-  console.log('services', services);
-  
 
   useEffect(() => {
     //fetch services

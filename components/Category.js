@@ -1,19 +1,15 @@
 'use client'
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Link from "next/link";
 
 import { FaAngleDown } from "react-icons/fa";
 import { AiOutlineBars } from "react-icons/ai";
-import { useEffect } from "react/cjs/react.production.min";
-import axiosInstance from "@/helpers/axiosInstance";
 
 const CategorySection = () => {
   const [isOpenBar, setIswOpenBar] = useState(false);
   const [dropdown, setDropdown] = useState(null);
   const [categoryList, setCategoryList] = useState([])
   const [isCategory, setIsCategory] = useState(false);
-  const [loading, setLoading]= useState(true);
-  const [error, setError] = useState([])
 
   const handleFilterBarClick = () => {
     setIswOpenBar(!isOpenBar)
@@ -23,17 +19,8 @@ const handleProductCategory = (tabname) => {
   setIsCategory(!isCategory);
 };
 
-useEffect(() => {
-const fetchCategory = async () => {
-  try {
-    const res = await axiosInstance.get('/categories?taxonomy_type=categories');
-    setCategoryList(res.data.data)
-  } catch (error) {
-    
-  } // end try category
-}// end fetchCategory
-fetchCategory()
-}, [])
+
+
   return (
     <>
       <div>

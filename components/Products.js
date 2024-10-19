@@ -1,65 +1,58 @@
-'use client'
-import React, { useEffect, useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
+"use client";
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
-// == images === 
-import product1 from './../public/Image/products/p1.png'
-import product2 from './../public/Image/products/p2.jpg'
-import product3 from './../public/Image/products/p3.jpg'
-import product4 from './../public/Image/products/p4.png'
-import product5 from './../public/Image/products/p5.jpg'
-import product6 from './../public/Image/products/p6.png'
-import product7 from './../public/Image/products/p7.png'
-import product8 from './../public/Image/products/p8.jpeg'
-import axiosInstance from '@/helpers/axiosInstance'
+import axiosInstance from "@/helpers/axiosInstance";
 
 const Products = () => {
+  const [products, setProducts] = useState([]);
 
-    const [products, setProducts] = useState([]); // products
-    console.log('products', products);
-    
-
-    useEffect(() => {
-        // fetch product 
-        const fetchProduct = async () => {
-            try {
-                const res = await axiosInstance.get('/posts?term_type=product');
-                setProducts(res.data.data)
-            } catch (error) {
-                console.log(error.message);
-            }
-        }
-        fetchProduct()
-    }, [])
-    
+  useEffect(() => {
+    // fetch product
+    const fetchProduct = async () => {
+      try {
+        const res = await axiosInstance.get("/posts?term_type=product");
+        setProducts(res.data.data);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    fetchProduct();
+  }, []);
 
   return (
-    <div className=' px-3 md:px-0 py-20 mt-20 bg-productBg'>
+    <div className=" px-3 md:px-0 py-20 mt-20 bg-productBg">
+      <div className="container mx-auto">
+        <div>
+          <h2 className="text-center md:text-3xl text-xl font-semibold text-textHeadingColor">
+            Featured Products
+          </h2>
+          {/* <p className='text-center text-textNavColor font-semibold text-sm md:text-lg mt-3'>Our service covers the below segments as shown below -</p> */}
+        </div>
 
-    <div className='container mx-auto'>
-
-       <div>
-       <h2 className='text-center md:text-3xl text-xl font-semibold text-textHeadingColor'>Featured Products</h2>
-       {/* <p className='text-center text-textNavColor font-semibold text-sm md:text-lg mt-3'>Our service covers the below segments as shown below -</p> */}
-       </div>
-
-       <div className='md:grid md:grid-cols-4 grid-cols-1 grid gap-10 mt-10'>
-        {products.map((product, productIndex) => (
-            <Link href={`/product/${product.slug}`} key={productIndex} className='bg-white  py-4 p-2 rounded-md text-center hover:shadow-md duration-200 ease-in-out w-full border-b-2 hover:border-hoverborder inline-block'>
-            <Image src={product?.featured_image} width={330} height={330} alt={product.name} priority className='mx-auto'></Image>
-            <h2 className='text-lg font-semibold mt-2'> {product?.name} </h2>
-        </Link>
-        ))}
-
-       </div>
-
-
-
+        <div className="md:grid md:grid-cols-4 grid-cols-1 grid gap-10 mt-10">
+          {products.map((product, productIndex) => (
+            <Link
+              href={`/product/${product.slug}`}
+              key={productIndex}
+              className="bg-white  py-4 p-2 rounded-md text-center hover:shadow-md duration-200 ease-in-out w-full border-b-2 hover:border-hoverborder inline-block"
+            >
+              <Image
+                src={product?.featured_image}
+                width={330}
+                height={330}
+                alt={product.name}
+                priority
+                className="mx-auto"
+              ></Image>
+              <h2 className="text-lg font-semibold mt-2"> {product?.name} </h2>
+            </Link>
+          ))}
+        </div>
+      </div>
     </div>
-  
-</div>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;

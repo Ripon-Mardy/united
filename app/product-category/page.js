@@ -16,7 +16,7 @@ import product7 from "./../../public/Image/product-category/7.png";
 // === icons ===
 import { FaArrowRight } from "react-icons/fa6";
 import { FaAnglesRight } from "react-icons/fa6";
-import CategorySection from "@/components/CategorySection";
+import CategorySection from "@/components/Category";
 
 const page = () => {
     const productList = [

@@ -22,7 +22,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-import CategorySection from "@/components/categorySection";
+import CategorySection from "@/components/Category";
 
 const page = ({ params }) => {
   const slug = params.slug;

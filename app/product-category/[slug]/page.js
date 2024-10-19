@@ -4,21 +4,15 @@ import Link from "next/link";
 import Image from "next/image";
 
 import axiosInstance from "@/helpers/axiosInstance";
+import CategorySection from "@/components/Category";
 
-// icons 
 import { FaArrowRight } from "react-icons/fa6";
 import { FaAnglesRight } from "react-icons/fa6";
-// import { FaAngleDown } from "react-icons/fa";
-// import { AiOutlineBars } from "react-icons/ai";
-
 import { stripHtmlTags } from "@/helpers/truncate";
-import CategorySection from "@/components/CategorySection";
 
 const page = ({ params }) => {
   const id = params.slug;
-  
   const [filterProduct, setfilterProduct] = useState([]);
-  
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -32,15 +26,11 @@ const page = ({ params }) => {
     fetchProducts();
   }, []);
 
-
-
   return (
     <>
       <div className=" productImageCover py-12 md:py-28">
         <div className=" container mx-auto px-3 md:px-0">
-          <h2 className="text-white font-semibold text-4xl capitalize">
-            {id}
-          </h2>
+          <h2 className="text-white font-semibold text-4xl capitalize">{id}</h2>
           <div className="text-white  mt-3">
             <Link href={"/"}>Home /</Link>
             <span>Forklift</span>
@@ -103,7 +93,7 @@ const page = ({ params }) => {
         {/* product list  */}
 
         <div className="md:flex gap-10">
-          <CategorySection />
+          <CategorySection/>
 
           <div className="md:w-[75%]">
             <div className="md:py-16 flex flex-col items-start justify-center gap-10">
