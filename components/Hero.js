@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import axiosInstance from "@/helpers/axiosInstance"; // Ensure axiosInstance is correctly imported
+import axiosInstance from "@/helpers/axiosInstance";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -64,7 +64,7 @@ const Hero = () => {
       >
         {slider.map((slideItem, sliderIndex) => (
           <SwiperSlide key={sliderIndex}>
-            <div className="md:h-screen">
+            <div>
               <Image
                 src={slideItem?.featured_image}
                 width={500}
@@ -72,7 +72,7 @@ const Hero = () => {
                 height={300}
                 quality={90}
                 alt={slideItem.name}
-                className=" object-cover w-full"
+                className=" object-cover w-full h-[600px]"
               ></Image>
             </div>
           </SwiperSlide>

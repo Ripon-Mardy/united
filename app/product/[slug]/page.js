@@ -7,7 +7,6 @@ import axiosInstance from "@/helpers/axiosInstance";
 import ProductExplore from "@/components/ProductExplore";
 import { stripHtmlTags } from "@/helpers/truncate";
 
-
 // === icons ===
 import { TiWorld } from "react-icons/ti";
 import { IoIosContact } from "react-icons/io";
@@ -29,13 +28,12 @@ const page = ({ params }) => {
 
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [product, setProduct] = useState([]); // set product data
+  console.log("product", product);
 
   const [loading, setLoading] = useState(true); // set loading
   const [error, setError] = useState(false); // set error
 
   const [activeSection, setActiveSection] = useState("details"); // Default to 'details'
-
- 
 
   const showDetails = () => {
     setActiveSection("details"); // Set to 'details' on button click
@@ -43,6 +41,43 @@ const page = ({ params }) => {
 
   const showContactForm = () => {
     setActiveSection("contact"); // Set to 'contact' on button click
+  };
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  // Handle form field changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData, // Keep the rest of the form data
+      [name]: value, // Update the specific field value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(formData);
+
+    // Handle form submission, e.g., send data to an API
+    try {
+      const response = await axiosInstance.post("/contacts/create", formData); // Replace with your API endpoint
+
+      toast.success("Your query has been submitted", {
+        position: "bottom-left", // Position toast in the bottom-left corner
+      });
+      onClose();
+      //console.log('Response:', response.data);
+      // Handle success, e.g., show a success message or redirect
+    } catch (error) {
+      toast.error(error.response?.data || error.message);
+      // console.error('Error:', error.response?.data || error.message);
+      // Handle error, e.g., show an error message
+    }
   };
 
   useEffect(() => {
@@ -71,16 +106,13 @@ const page = ({ params }) => {
     return <div>{error}</div>;
   }
 
-
-
   const images =
     Array.isArray(product.extra_fields[0]?.meta_value) &&
     product.extra_fields[0]?.meta_value.length > 0
       ? product.extra_fields[0].meta_value
       : [product.featured_image]; // If no extra fields, fallback to featured_image
 
-  
-const shortDesciption = stripHtmlTags(product.description)
+  const shortDesciption = stripHtmlTags(product.description);
 
   return (
     <>
@@ -96,14 +128,11 @@ const shortDesciption = stripHtmlTags(product.description)
             </div>
           </div>
         </div>
-        {/* ==== product review ====  */}
+        {/* product review  */}
         <div className="container mx-auto py-10 px-3 md:px-0 ">
           <div>
-
             <div className="md:flex md:gap-10">
-
-              <CategorySection/>
-
+              <CategorySection />
 
               <div className="md:w-[75%]">
                 <div className="md:flex md:justify-between gap-5">
@@ -160,21 +189,20 @@ const shortDesciption = stripHtmlTags(product.description)
                             </div>
                           )
                         )}
-
                     </Swiper>
                   </div>
 
                   <div className="md:w-1/2">
-                    <h1 className="text-3xl font-semibold mt-5 md:mt-0 mb-5">
+                    <h1 className="text-2xl font-semibold mt-5 md:mt-0 mb-5">
                       {product.name}
                     </h1>
-                    <p className="leading-7 md:leading-7 text-sm md:text-base text-paraColor"> {shortDesciption} </p>
-
+                    <p className="leading-7 md:leading-7 text-sm md:text-base text-paraColor">
+                      {shortDesciption}
+                    </p>
                   </div>
                 </div>
 
                 <div>
-
                   <div className="product-page mt-10">
                     {/* Buttons to switch between sections */}
                     <div className="button-group flex gap-5">
@@ -204,76 +232,133 @@ const shortDesciption = stripHtmlTags(product.description)
                     <div className="content mt-4">
                       {activeSection === "details" ? (
                         <div className="details-section">
-                         <div className="md:w-2/3 flex flex-col mt-10">
-                         <div className="flex gap-5 border-b border-t py-3 border-hoverborder border-opacity-20">
-                            <h1 className="font-semibold w-80">Parts Name</h1>
-                            <p className="w-full font-medium">  helloo </p>
+                          <div className="md:w-2/3 flex flex-col mt-10">
+                            <div className="flex gap-5 border-b border-t py-3 border-hoverborder border-opacity-20">
+                              <h1 className="font-semibold w-80">Parts Name</h1>
+                              <p className="w-full font-medium">
+                                {" "}
+                                {product?.name}{" "}
+                              </p>
+                            </div>
+                            <div className="flex gap-5 border-b py-3 border-hoverborder border-opacity-20">
+                              <h1 className="font-semibold w-80">
+                                Usages Model
+                              </h1>
+                              <p className="w-full font-medium">8FD20 </p>
+                            </div>
+                            <div className="flex gap-5 border-b py-3 border-hoverborder border-opacity-20">
+                              <h1 className="font-semibold w-80">
+                                Usages Application
+                              </h1>
+                              <p className="w-full font-medium">Forklift </p>
+                            </div>
+                            <div className="flex gap-5 border-b py-3 border-hoverborder border-opacity-20">
+                              <h1 className="font-semibold w-80">Brand</h1>
+                              <p className="w-full font-medium">Toyota </p>
+                            </div>
+                            <div className="flex gap-5 border-b py-3 border-hoverborder border-opacity-20">
+                              <h1 className="font-semibold w-80">
+                                Package Name
+                              </h1>
+                              <p className="w-full font-medium">Unit </p>
+                            </div>
+                            <div className="flex gap-5 border-b py-3 border-hoverborder border-opacity-20">
+                              <h1 className="font-semibold w-80">Quality</h1>
+                              <p className="w-full font-medium">
+                                Good Condition
+                              </p>
+                            </div>
+                            <div className="flex gap-5 border-b py-3 border-hoverborder border-opacity-20">
+                              <h1 className="font-semibold w-80">Warrenty</h1>
+                              <p className="w-full font-medium">Rent Time</p>
+                            </div>
+                            <div className="flex gap-5 border-b py-3 border-hoverborder border-opacity-20">
+                              <h1 className="font-semibold w-80">
+                                Place of Origin
+                              </h1>
+                              <p className="w-full font-medium">
+                                Made in Japan
+                              </p>
+                            </div>
                           </div>
-                          <div className="flex gap-5 border-b py-3 border-hoverborder border-opacity-20">
-                            <h1 className="font-semibold w-80">Usages Model</h1>
-                            <p className="w-full font-medium">8FD20 </p>
-                          </div>
-                          <div className="flex gap-5 border-b py-3 border-hoverborder border-opacity-20">
-                            <h1 className="font-semibold w-80">Usages Application</h1>
-                            <p className="w-full font-medium">Forklift </p>
-                          </div>
-                          <div className="flex gap-5 border-b py-3 border-hoverborder border-opacity-20">
-                            <h1 className="font-semibold w-80">Brand</h1>
-                            <p className="w-full font-medium">Toyota </p>
-                          </div>
-                          <div className="flex gap-5 border-b py-3 border-hoverborder border-opacity-20">
-                            <h1 className="font-semibold w-80">Package Name</h1>
-                            <p className="w-full font-medium">Unit </p>
-                          </div>
-                          <div className="flex gap-5 border-b py-3 border-hoverborder border-opacity-20">
-                            <h1 className="font-semibold w-80">Quality</h1>
-                            <p className="w-full font-medium">Good Condition</p>
-                          </div>
-                          <div className="flex gap-5 border-b py-3 border-hoverborder border-opacity-20">
-                            <h1 className="font-semibold w-80">Warrenty</h1>
-                            <p className="w-full font-medium">Rent Time</p>
-                          </div>
-                          <div className="flex gap-5 border-b py-3 border-hoverborder border-opacity-20">
-                            <h1 className="font-semibold w-80">Place of Origin</h1>
-                            <p className="w-full font-medium">Made in Japan</p>
-                          </div>
-                         </div>
                         </div>
                       ) : (
                         <div className="contact-form-section bg-navBg p-5 md:w-1/2 rounded-md mt-10">
-                          <form className="flex flex-col gap-5">
+                          <form
+                            onSubmit={handleSubmit}
+                            className="flex flex-col gap-5"
+                          >
                             <div>
-                            <label htmlFor="name" className="text-white font-semibold">Name:</label>
-                            <input
-                              type="text"
-                              id="name"
-                              name="name"
-                              className="border px-2 py-3 block mb-2 w-full outline-none font-semibold rounded-md text-sm"
-                              placeholder="Name"
-                            />
+                              <label
+                                htmlFor="name"
+                                className="text-white font-semibold"
+                              >
+                                Name:
+                              </label>
+                              <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                value={formData.name} // Bind input value to state
+                                onChange={handleChange} // Update state when input changes
+                                className="border px-2 py-3 block mb-2 w-full outline-none font-semibold rounded-md text-sm"
+                                placeholder="Name"
+                              />
                             </div>
 
-                           <div>
-                           <label htmlFor="email" className="text-white font-semibold">Email:</label>
-                            <input
-                              type="email"
-                              id="email"
-                              placeholder="Email Address"
-                              name="email"
-                              className="border px-2 py-3 block mb-2 w-full rounded-md font-semibold text-sm outline-none"
-                            />
-                           </div>
+                            <div>
+                              <label
+                                htmlFor="email"
+                                className="text-white font-semibold"
+                              >
+                                Email:
+                              </label>
+                              <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                placeholder="Email Address"
+                                className="border px-2 py-3 block mb-2 w-full rounded-md font-semibold text-sm outline-none"
+                              />
+                            </div>
 
-                           <div>
-                           <label htmlFor="message" className="text-white font-semibold">Message:</label>
-                            <textarea
-                              id="message"
-                              name="message"
-                              placeholder="Message"
-                              rows={4}
-                              className="border px-2 py-2 block mb-2 w-full rounded-md font-semibold outline-none text-sm"
-                            ></textarea>
-                           </div>
+                            <div>
+                              <label
+                                htmlFor="phone"
+                                className="text-white font-semibold"
+                              >
+                                Phone:
+                              </label>
+                              <input
+                                type="number"
+                                id="phone"
+                                name="phone"
+                                value={formData.phone}
+                                onChange={handleChange}
+                                placeholder="Phone Number"
+                                className="border px-2 py-3 block mb-2 w-full rounded-md font-semibold text-sm outline-none"
+                              />
+                            </div>
+
+                            <div>
+                              <label
+                                htmlFor="message"
+                                className="text-white font-semibold"
+                              >
+                                Message:
+                              </label>
+                              <textarea
+                                id="message"
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                placeholder="Message"
+                                rows={4}
+                                className="border px-2 py-2 block mb-2 w-full rounded-md font-semibold outline-none text-sm"
+                              ></textarea>
+                            </div>
 
                             <button
                               type="submit"
