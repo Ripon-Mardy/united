@@ -29,15 +29,14 @@ const page = ({ params }) => {
   }, [id]);
 
   const openPopUp = (productName) => {
-    setSelectedProductName(productName); // Set the selected product name
-    setIsFormVisible(true); // Show the form popup
+    setSelectedProductName(productName); 
+    setIsFormVisible(true); 
   };
 
   const handleCloseForm = () => {
-    setIsFormVisible(false); // Close the form popup
+    setIsFormVisible(false);
   };
 
-  // Pagination logic: Calculate the total pages and the products to display on the current page
   const totalProducts = filterProduct.length;
   const totalPages = Math.ceil(totalProducts / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;

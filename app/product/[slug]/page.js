@@ -236,8 +236,7 @@ const page = ({ params }) => {
                             <div className="flex gap-5 border-b border-t py-3 border-hoverborder border-opacity-20">
                               <h1 className="font-semibold w-80">Parts Name</h1>
                               <p className="w-full font-medium">
-                                {" "}
-                                {product?.name}{" "}
+                                {product?.name}
                               </p>
                             </div>
                             <div className="flex gap-5 border-b py-3 border-hoverborder border-opacity-20">
@@ -376,7 +375,7 @@ const page = ({ params }) => {
             </div>
           </div>
         </div>
-        {/* ==== explore product ====  */}
+       {/* explore product  */}
         <div className="container mx-auto py-20 px-3 md:px-0">
           <h1 className="text-2xl font-semibold">Explore More Product</h1>
 
