@@ -17,7 +17,7 @@ const CategorySection = () => {
     const fetchCategory = async () => {
       try {
         const res = await axiosInstance.get(
-          "/categories?taxonomy_type=categories"
+          "/categories?taxonomy_type=categories&limit=50"
         );
         setIsCategoryItems(res.data.data);
       } catch (error) {
