@@ -8,8 +8,9 @@ import aboutus from "./../public/Image/about-us.jpg";
 const Aboutus = () => {
   return (
     <div className="container mx-auto px-3 md:px-0 py-10">
-      <div className="md:flex items-center justify-center gap-7">
-        <div className="w-full">
+      <div className="md:flex items-center justify-center gap-6">
+
+        <div className="w-full ">
           <Image
             src={aboutus}
             width={450}
