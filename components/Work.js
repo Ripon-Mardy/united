@@ -46,11 +46,11 @@ const Work = () => {
     fetchPartners();
   }, []);
 
-  if(loading) {
-    return <> <Loading/> </>
+  if (loading) {
+    return <> <Loading /> </>
   }
 
-  if(error) {
+  if (error) {
     return <> {setError(error.message)}  </>
   }
 
@@ -71,23 +71,27 @@ const Work = () => {
             disableOnInteraction: false,
           }}
           breakpoints={{
+            320: {
+              slidesPerView: 2,
+              spaceBetween: 15,
+            },
             640: {
               slidesPerView: 2,
               spaceBetween: 20,
             },
             768: {
               slidesPerView: 4,
-              spaceBetween: 40,
+              spaceBetween: 20,
             },
             1024: {
               slidesPerView: 6,
-              spaceBetween: 50,
+              spaceBetween: 20,
             },
           }}
           modules={[Pagination, Autoplay]}
           className="mySwiper"
         >
-          { brands.map((brand, brandIndex) => (
+          {brands.map((brand, brandIndex) => (
             <SwiperSlide key={brandIndex}>
               <div className=" border border-gray-300 rounded-md p-2 mx-auto hover:shadow-2xl duration-150 ease-in-out mt-5 w-full">
                 <Image
@@ -104,10 +108,10 @@ const Work = () => {
         </Swiper>
       </div>
 
-      <div className="container mx-auto px-3 md:px-0 py-10">
-        <h2 className="md:text-3xl text-xl text-textHeadingColor font-semibold text-center">
+      <div className="container mx-auto px-3 md:py-10">
+        <h4 className="md:text-3xl text-xl text-textHeadingColor font-semibold text-center">
           Some Of Our Valued Partners. Why You Not Next?
-        </h2>
+        </h4>
         <Swiper
           slidesPerView={1}
           spaceBetween={6}
@@ -119,17 +123,21 @@ const Work = () => {
             disableOnInteraction: false,
           }}
           breakpoints={{
+            320: {
+              slidesPerView: 2,
+              spaceBetween: 15,
+            },
             640: {
               slidesPerView: 2,
               spaceBetween: 20,
             },
             768: {
               slidesPerView: 4,
-              spaceBetween: 40,
+              spaceBetween: 20,
             },
             1024: {
               slidesPerView: 6,
-              spaceBetween: 50,
+              spaceBetween: 20,
             },
           }}
           modules={[Pagination, Autoplay]}
@@ -137,11 +145,11 @@ const Work = () => {
         >
           {pratners.map((partner, partnerIndex) => (
             <SwiperSlide key={partnerIndex}>
-              <div className="md:w-48 w-60 border border-gray-300 rounded-md p-2 mx-auto hover:shadow-2xl duration-150 ease-in-out mt-5">
+              <div className="border border-gray-300 rounded-md p-2 mx-auto hover:shadow-2xl duration-150 ease-in-out mt-5 w-full">
                 <Image
                   src={partner?.featured_image}
-                  width={500}
-                  height={500}
+                  width={300}
+                  height={300}
                   alt={partner.name}
                   priority
                   className="imgRation w-full"

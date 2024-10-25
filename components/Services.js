@@ -21,8 +21,8 @@ const Services = () => {
   }, []);
 
   return (
-    <div className="py-10">
-      <div className=" px-3 bg-sectionBg py-5">
+    <div className="pt-10 pb-0 md:py-10">
+      <div className="px-3 bg-sectionBg py-5">
         <div className="container mx-auto">
           <div>
             <h2 className="text-center md:text-3xl text-xl font-semibold text-textHeadingColor">
@@ -33,7 +33,7 @@ const Services = () => {
             </p>
           </div>
 
-          <div className="md:grid md:grid-cols-4 grid-cols-1 grid gap-10 mt-5 w-full flex-1">
+          <div className="md:grid md:grid-cols-4 grid-cols-2 grid gap-5 mt-5 w-full flex-1">
             {services.map((service, serviceIndex) => (
               <Link
               key={serviceIndex}

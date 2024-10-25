@@ -64,15 +64,15 @@ const Hero = () => {
       >
         {slider.map((slideItem, sliderIndex) => (
           <SwiperSlide key={sliderIndex}>
-            <div className="md:h-screen">
+            <div className="">
               <Image
                 src={slideItem?.featured_image}
-                width={500}
+                width={1170}
                 priority
-                height={300}
+                height={550}
                 quality={90}
                 alt={slideItem.name}
-                className=" object-cover w-full"
+                className="object-cover w-full h-[550px]"
               ></Image>
             </div>
           </SwiperSlide>

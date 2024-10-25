@@ -8,18 +8,26 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
+    container: {
+      screens: {
+        sm: "100%",
+        md: "100%",
+        lg: "100%",
+        xl: "1170px"
+      }      
+    },
+    extend: {      
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      textColor : {
-        "textNavColor" : "#999",
+      textColor: {
+        "textNavColor": "#999",
         "headingColor": "#eee",
-        "textHeadingColor" : "#232323",
-        "paraColor" : "#494949",
-        "textHoverColor" : "#002060"
+        "textHeadingColor": "#232323",
+        "paraColor": "#494949",
+        "textHoverColor": "#002060"
       },
       backgroundColor: {
         "facebookBg": "#4B69A8",
@@ -27,14 +35,14 @@ module.exports = {
         "linkedinBg": "#1D98D3",
         "instagramBg": "#D70867",
         "whatsappBg": "#00A834",
-        "navBg" : "#002060",
-        "bgYellow" : "#ffc107",
-        "footerBg" : "#1C1C1C",
-        "sectionBg" : "#F7F9FB",
-        "productBg" : "#EAEBF2"
+        "navBg": "#002060",
+        "bgYellow": "#ffc107",
+        "footerBg": "#1C1C1C",
+        "sectionBg": "#F7F9FB",
+        "productBg": "#EAEBF2"
       },
-      borderColor : {
-        "hoverborder" : "#002060"
+      borderColor: {
+        "hoverborder": "#002060"
       }
     },
   },

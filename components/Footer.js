@@ -13,14 +13,27 @@ import {
   FaTimes
 } from "react-icons/fa";
 import axiosInstance from "@/helpers/axiosInstance";
+import { getMetaValueByMetaName } from '@/helpers/metaHelpers';
 
 const Footer = () => {
   const [gallery, setGallery] = useState([]);
   const [isFullscreen, setIsFullscreen] = useState(false); // Full-screen state
   const [currentIndex, setCurrentIndex] = useState(0); // Current image index
 
+  const [settings, setSettings] = useState(null);
+
+
   // Fetch gallery data from API
   useEffect(() => {
+
+    axiosInstance.get('/frontend/settings')
+      .then(response => {
+        setSettings(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching settings:', error);
+      });
+
     const fetchGallery = async () => {
       try {
         const res = await axiosInstance.get("/posts?term_type=gallery");
@@ -32,6 +45,12 @@ const Footer = () => {
     fetchGallery();
   }, []);
 
+  // Get social links dynamically with fallback to '#'
+  const facebookLink = getMetaValueByMetaName(settings, 'facebook_url') || '#';
+  const youtubeLink = getMetaValueByMetaName(settings, 'youtube_url') || '#';
+  const linkedinLink = getMetaValueByMetaName(settings, 'linkedin_url') || '#';
+  const instagramLink = getMetaValueByMetaName(settings, 'instagram_url') || '#';
+  const whatsappLink = getMetaValueByMetaName(settings, 'whatsapp_url') || '#';
   // Limiting gallery display to 4 images
   const galleryLimit = gallery.slice(0, 4); // Get only first 3 images
 
@@ -79,28 +98,28 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 md:mt-0">
-          <h2 className="md:text-xl font-semibold text-lg">Connect us</h2>
+          <h2 className="md:text-xl font-semibold text-lg">Connect with us</h2>
           <div className="flex gap-5 mt-5">
-            <Link href="#" className="bg-facebookBg p-1.5 rounded-full text-white">
+            <Link href={facebookLink} className="bg-facebookBg p-1.5 rounded-full text-white">
               <FaFacebookF />
             </Link>
-            <Link href="#" className="bg-youtubeBg p-1.5 rounded-full text-white">
+            <Link href={youtubeLink} className="bg-youtubeBg p-1.5 rounded-full text-white">
               <FaYoutube />
             </Link>
-            <Link href="#" className="bg-linkedinBg p-1.5 rounded-full text-white">
+            <Link href={linkedinLink} className="bg-linkedinBg p-1.5 rounded-full text-white">
               <FaLinkedin />
             </Link>
-            <Link href="#" className="bg-instagramBg p-1.5 rounded-full text-white">
+            <Link href={instagramLink} className="bg-instagramBg p-1.5 rounded-full text-white">
               <FaInstagram />
             </Link>
-            <Link href="#" className="bg-whatsappBg p-1.5 rounded-full text-white">
+            <Link href={whatsappLink} className="bg-whatsappBg p-1.5 rounded-full text-white">
               <FaWhatsappSquare />
             </Link>
           </div>
         </div>
 
         {/* Gallery Section with 'See More' Option */}
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-4 gap-4">
           {galleryLimit.map((post, index) => (
             <div key={post.id}>
               <div className="border rounded overflow-hidden">
@@ -118,7 +137,7 @@ const Footer = () => {
           ))}
 
           {/* 'See More' Button */}
-          {gallery.length > 4 && (
+          {/* {gallery.length > 4 && (
             <div className="flex justify-center items-center">
               <Link
                 href="/gallery"
@@ -127,7 +146,7 @@ const Footer = () => {
                 View All
               </Link>
             </div>
-          )}
+          )} */}
         </div>
       </div>
 
@@ -136,7 +155,7 @@ const Footer = () => {
       <div className="container mx-auto mt-5 text-textNavColor">
         <div className="text-sm text-center">
           <p>Copyright © 2021 United Machinery Bangladesh. All Rights Reserved.</p>
-          <h2>Developed By Mathmozo It</h2>
+          <h2>Developed By <Link href={`https://mathmozo.com`} target="_blank">Mathmozo IT</Link></h2>
         </div>
       </div>
 

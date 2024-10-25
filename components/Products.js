@@ -22,7 +22,7 @@ const Products = () => {
   }, []);
 
   return (
-    <div className=" px-3 md:px-0 py-20 mt-20 bg-productBg">
+    <div className=" px-3 md:px-0 py-20 mt-0 md:mt-20 bg-productBg">
       <div className="container mx-auto">
         <div>
           <h2 className="text-center md:text-3xl text-xl font-semibold text-textHeadingColor">
@@ -31,7 +31,7 @@ const Products = () => {
           {/* <p className='text-center text-textNavColor font-semibold text-sm md:text-lg mt-3'>Our service covers the below segments as shown below -</p> */}
         </div>
 
-        <div className="md:grid md:grid-cols-4 grid-cols-1 grid gap-10 mt-10">
+        <div className="md:grid md:grid-cols-4 grid-cols-2 grid gap-5 mt-10">
           {products.map((product, productIndex) => (
             <Link
               href={`/product/${product.slug}`}
@@ -40,13 +40,13 @@ const Products = () => {
             >
               <Image
                 src={product?.featured_image}
-                width={330}
-                height={330}
+                width={800}
+                height={800}
                 alt={product.name}
                 priority
                 className="mx-auto"
               ></Image>
-              <h2 className="text-lg font-semibold mt-2"> {product?.name} </h2>
+              <h2 className="text-base md:text-lg font-semibold mt-2"> {product?.name} </h2>
             </Link>
           ))}
         </div>

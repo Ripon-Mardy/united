@@ -137,8 +137,7 @@ const Navbar = () => {
     <>
       <div className="container mx-auto w-full py-3 px-3 md:px-0 z-10">
         <div className="flex items-center justify-between gap-3">
-          <div className="flex items-center justify-between w-full">
-            {/* logo  */}
+          <div className="flex items-center justify-between w-full">            
             <div>
               <Link href={"/"}>
                 <Image
