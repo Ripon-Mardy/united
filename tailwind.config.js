@@ -35,14 +35,16 @@ module.exports = {
         "linkedinBg": "#1D98D3",
         "instagramBg": "#D70867",
         "whatsappBg": "#00A834",
-        "navBg": "#002060",
-        "bgYellow": "#ffc107",
-        "footerBg": "#1C1C1C",
-        "sectionBg": "#F7F9FB",
-        "productBg": "#EAEBF2"
+        "navBg" : "#002060",
+        "navHoverColor" : "#003080",
+        "bgYellow" : "#ffc107",
+        "footerBg" : "#1C1C1C",
+        "sectionBg" : "#F7F9FB",
+        "productBg" : "#EAEBF2"
       },
-      borderColor: {
-        "hoverborder": "#002060"
+      borderColor : {
+        "hoverborder" : "#002060",
+        "buttonborder" : "#002060"
       }
     },
   },

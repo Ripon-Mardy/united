@@ -22,7 +22,7 @@ const Products = () => {
   }, []);
 
   return (
-    <div className=" px-3 md:px-0 py-20 mt-0 md:mt-20 bg-productBg">
+    <div className="py-5 px-3 md:px-0 mt-20 bg-productBg">
       <div className="container mx-auto">
         <div>
           <h2 className="text-center md:text-3xl text-xl font-semibold text-textHeadingColor">
@@ -31,7 +31,7 @@ const Products = () => {
           {/* <p className='text-center text-textNavColor font-semibold text-sm md:text-lg mt-3'>Our service covers the below segments as shown below -</p> */}
         </div>
 
-        <div className="md:grid md:grid-cols-4 grid-cols-2 grid gap-5 mt-10">
+        <div className="md:grid md:grid-cols-4 grid-cols-2 grid gap-3 mt-10">
           {products.map((product, productIndex) => (
             <Link
               href={`/product/${product.slug}`}

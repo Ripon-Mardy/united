@@ -56,7 +56,7 @@ const Work = () => {
 
   return (
     <>
-      <div className="container mx-auto px-3 py-10">
+      <div className="container mx-auto px-3 py-5">
         <h4 className="md:text-3xl text-xl text-textHeadingColor font-semibold text-center">
           We Work With
         </h4>
@@ -71,21 +71,21 @@ const Work = () => {
             disableOnInteraction: false,
           }}
           breakpoints={{
-            320: {
+            360: {
               slidesPerView: 2,
               spaceBetween: 15,
             },
             640: {
               slidesPerView: 2,
-              spaceBetween: 20,
+              spaceBetween: 10,
             },
             768: {
               slidesPerView: 4,
-              spaceBetween: 20,
+              spaceBetween: 30,
             },
             1024: {
               slidesPerView: 6,
-              spaceBetween: 20,
+              spaceBetween: 30,
             },
           }}
           modules={[Pagination, Autoplay]}
@@ -108,36 +108,33 @@ const Work = () => {
         </Swiper>
       </div>
 
-      <div className="container mx-auto px-3 md:py-10">
-        <h4 className="md:text-3xl text-xl text-textHeadingColor font-semibold text-center">
+      <div className="container mx-auto px-3 md:px-0 py-5">
+        <h2 className="md:text-3xl text-xl text-textHeadingColor font-semibold text-center">
           Some Of Our Valued Partners. Why You Not Next?
-        </h4>
+        </h2>
         <Swiper
           slidesPerView={1}
           spaceBetween={6}
-          // pagination={{
-          //   clickable: true,
-          // }}
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
           }}
           breakpoints={{
-            320: {
+            360: {
               slidesPerView: 2,
               spaceBetween: 15,
             },
             640: {
               slidesPerView: 2,
-              spaceBetween: 20,
+              spaceBetween: 10,
             },
             768: {
               slidesPerView: 4,
-              spaceBetween: 20,
+              spaceBetween: 30,
             },
             1024: {
               slidesPerView: 6,
-              spaceBetween: 20,
+              spaceBetween: 30,
             },
           }}
           modules={[Pagination, Autoplay]}
@@ -145,7 +142,7 @@ const Work = () => {
         >
           {pratners.map((partner, partnerIndex) => (
             <SwiperSlide key={partnerIndex}>
-              <div className="border border-gray-300 rounded-md p-2 mx-auto hover:shadow-2xl duration-150 ease-in-out mt-5 w-full">
+              <div  className=" border border-gray-300 rounded-md p-2 mx-auto hover:shadow-2xl duration-150 ease-in-out mt-5 w-full">
                 <Image
                   src={partner?.featured_image}
                   width={300}

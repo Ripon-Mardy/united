@@ -8,7 +8,6 @@ import Image from "next/image";
 import "swiper/css";
 import "swiper/css/pagination";
 
-
 // import required modules
 import { Pagination } from "swiper/modules";
 import axiosInstance from "@/helpers/axiosInstance";
@@ -33,12 +32,17 @@ const ProductExplore = () => {
     brandsList();
   }, []);
 
-  if(loading) {
-    return <> <Loading/> </>
+  if (loading) {
+    return (
+      <>
+        {" "}
+        <Loading />{" "}
+      </>
+    );
   }
 
-  if(error) {
-    return <> {setError('Something went wrong')} </>
+  if (error) {
+    return <> {setError("Something went wrong")} </>;
   }
 
   return (
@@ -73,14 +77,20 @@ const ProductExplore = () => {
         {products.map((product, productIndex) => (
           <SwiperSlide key={productIndex}>
             <Link href={`/product/${product.slug}`} className="bg-white">
-              <Image src={product?.featured_image} width={200} height={200} priority alt={product.name}></Image>
-              <h2 className="text-black text-2xl text-center">
+              <Image
+                src={product?.featured_image}
+                width={200}
+                height={200}
+                priority
+                alt={product.name}
+                className="w-52 h-52 mx-auto object-cover"
+              ></Image>
+              <h2 className="text-black text-xl text-center">
                 {product.name}
               </h2>
             </Link>
           </SwiperSlide>
         ))}
-
       </Swiper>
     </div>
   );
